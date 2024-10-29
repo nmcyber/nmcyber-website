@@ -1,10 +1,10 @@
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { navigation } from "../../Constants";
-import { Background } from "../shared/Background";
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Background } from "../shared/Background";
 
 const Header = () => {
   
@@ -31,9 +31,9 @@ const Header = () => {
   return (
     <header className={` fixed top-0 left-0  z-50 backdrop-blur-sm ${openNavigation ?"bg-color-1" :""} w-full h-24 lg:bg-transparent`}  >
       <div className=" flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8 " href="/">
+        <a className=" flex-shrink-0 w-[12rem] xl:mr-8 " href="/">
           <img
-            className="block w-[12rem]"
+            className="w-full"
             src={logo}
             alt="logo"
             height={220}
