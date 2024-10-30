@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Button } from '../ui/button'
 import BackgroundArtwork from '@/components/shared/BackgroundArtwork'
-import { ShieldCheck, Lock, Shield } from 'lucide-react'
 import SignUpForm from './SignUpForm'
 
 const Hero = () => {

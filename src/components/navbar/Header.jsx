@@ -1,10 +1,9 @@
-import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { navigation } from "../../Constants";
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Background } from "../shared/Background";
+import { logo } from "@/assets";
 
 const Header = () => {
   
