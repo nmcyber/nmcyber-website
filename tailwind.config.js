@@ -1,11 +1,17 @@
 // /** @type {import('tailwindcss').Config} */
+import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 module.exports = {
     darkMode: ['class'],
-    content: [
+    content: {
+		files: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx,vue}',
   ],
+  extract: extract,
+},
  theme: {
+	screens,
+	fontSize,
  	extend: {
  		borderRadius: {
  			lg: 'var(--radius)',
@@ -15,20 +21,16 @@ module.exports = {
  		container: {
  			center: 'true',
  			padding: '2rem',
- 			screens: {
- 				sm: '640px',
- 				md: '768px',
- 				xl: '1280px',
- 				'2xl': '1400px',
- 				'3xl': '1600px'
- 			}
- 		},
- 		screens: {
- 			xs: '420px'
+			 screens: {
+				sm: '640px',
+				md: '768px',
+				xl: '1280px',
+				'2xl': '1400px',
+				'3xl': '1600px'
+			  }
  		},
  		fontFamily: {
- 			inter: ["var(--font-inter)"],
- 			jarkata: ["var(--font-jarkata)"],
+ 			jarkata: ["var(--font-jakarta)"],
  			poppins: ["var(--font-poppins)"]
  		},
  		keyframes: {
@@ -97,5 +99,5 @@ module.exports = {
  		}
  	}
  },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), fluid],
 }
