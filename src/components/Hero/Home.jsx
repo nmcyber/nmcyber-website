@@ -1,5 +1,5 @@
 import About from "../About/About"
-import ContactUs from "../Contact/ContactUS"
+import ContactUs from "../Contact/ContactUs"
 import Solutions from "../Solutions/Solutions"
 import Hero from "./Hero"
 

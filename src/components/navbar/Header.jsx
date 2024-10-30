@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { logo } from "@/assets";
+import { Background } from "../shared/Background";
 
 const Header = () => {
   

@@ -1,74 +1,64 @@
-import { motion } from 'framer-motion'
-import { Button } from '../ui/button'
-import BackgroundArtwork from '@/components/shared/BackgroundArtwork'
-import SignUpForm from './SignUpForm'
+
+import { Button } from "../ui/button";
+import { poster } from "@/assets";
+import BackgroundArtwork from "@/components/shared/BackgroundArtwork";
+import { circuit, largeEllipse, smallEllipse } from "@/assets";
+import SectionWrapper from "../shared/SectionWrapper";
 
 const Hero = () => {
   return (
-    <section className=" flex flex-col justify-evenly min-h-[70dvh] md:pb-0 relative overflow-hidden outline outline-0 outline-orange-600">
-      {/* pt-32 pb-0 md:pt-24  */}
-      <div className="container h-[100%] relative z-20 mx-auto px-4 outline outline-0 outline-lime-600">
-        <div className="flex flex-col md:flex-row items-center">
-          <motion.div
-            className="md:w-1/2 mb-12 md:mb-0"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold font-jakarta mb-6 leading-tight">
-            Empowering You to<br />Thrive in and with<br />Cyber Security
-            </h1>
-            <p className="text-xl mb-8 text-foreground/80">
-            At NMCyber, we pride in turning your workforce into cyber warriors. Our innovative approach to cybersecurity awareness and training doesn't just protect your data, it transforms your entire organisation
-            </p>
-            <div className="flex space-x-4">
-              <Button className='text-lg px-8 py-8 rounded-full bg-gradient-to-l from-[#64cdf6] to-transparent backdrop-blur-md bg-white/30'>Ask For A Demo</Button>
-              <div className=" w-56 h-16 relative flex items-center justify-between overflow-hidden ">
-                    <div className="bg-[#2ca8dc] rounded-tr-full rounded-br-full w-16 h-full absolute top-0 right-0 z-10 " />
-                <Button className="w-full h-full rounded-full border border-[#2ca8dc] backdrop-blur-[8.40px] bg-white/5 flex items-center justify-between text-[#2ca8dc] text-xl font-semibold font-['Poppins'] leading-[14px] ">
-                        Show More
-                    {/* </div> */}
-                </Button>
-                </div>
-            </div>
-          </motion.div>
-          <motion.div
-            className=" flex md:w-1/2 items-centerr justify-center outline-0 outline-orange-600"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="relative ">
-              <div className="absolute z-0 inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full filter blur-3xl" />
-              {/* <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="Cyber Security Visualization"
-                className="rounded-lg shadow-2xl relative z-10"
-              /> */}
-              <SignUpForm />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full filter blur-3xl"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      />
-      {/* ARTWORK - BG-DECOR */}
-      <BackgroundArtwork />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent">
+    <>
+    {/* <SectionWrapper
+      images={[
+        {
+          src: circuit,
+          position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
+          style: { objectFit: 'cover', height: '300px', width: '300px' },
+          alt: 'Small Ellipse',
+        },
+        {
+          src: smallEllipse,
+          position: 'absolute top-[5%] left-[43%] z-10',
+          alt: 'Small Ellipse',
+        },
+        {
+          src: largeEllipse,
+          position: 'absolute top-[10%] left-[80%] z-10',
+          alt: 'Large Ellipse',
+        },
+      ]}
+    > */}
 
+    <section className=" relative w-full bg-color-1 min-h-[98dvh] pt-32 max-lg:pt-36  ">
+      <div className="w-full px-8 lg:px-16 xl:px-24">
+        <div className=" flex flex-wrap gap-x-5 h-[100%] relative z-20 mx-auto ">
+                    {/* LEFT COLUMN */}
+          <div className= "flex flex-col justify-between gap-4 bg-blend-exclusion text-center md:text-start pb-0 w-full md:w-2/4 ">
+            <h1 className=" font-jarkata text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl lg:leading-tight xl:leading-tight 2xl:leading-snug font-medium pb-3 ">
+              Empowering You To Thrive In <br/>And With Cybersecurity
+            </h1>
+            <p className=" font-poppins ~text-lg/xl ">
+            At NMCYBER, we pride in turning your workforce into cyber
+            &#13; warriors. Our innovative approach to cybersecurity awareness and
+            &#13; training doesn&#39;t just protect your data, it transforms your entire
+            &#13; organisation&#46;
+            </p>
+            <div className="flex gap-10 mx-5 items-center m-4">
+              <Button className=' font-semibold ~px-6/8 ~py-4/8 ~text-lg/2xl rounded-full bg-gradient-to-l from-[#64cdf6] to-transparent backdrop-blur-md bg-white/0'>Secure Your Business</Button>
+            </div>
+          </div>
+                    {/* RIGHT COLUMN */}
+          <div className="flex justify-center items-center w-1/5 mx-auto">
+            <img className=" " src={poster} alt="poster" width={850} />
+          </div>
+        </div>
+        <BackgroundArtwork />
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent "></div>
       </div>
     </section>
-  )
-}
+    {/* </SectionWrapper> */}
+    </>
+  );
+};
 
-export default Hero
+export default Hero;

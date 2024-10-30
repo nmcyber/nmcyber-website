@@ -1,6 +1,6 @@
 
 import Accordian from './Accordian'
-import cyberlogo  from "../../assets/hacker.webp"
+import { cyberlogo } from '@/assets'
 
 const About = () => {
   return (
