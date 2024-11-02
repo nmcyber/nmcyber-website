@@ -48,7 +48,7 @@ export const countUp =[
 
 export const accordion = [
   {
-    title: "DISCOVER",
+    title: "Discover",
     content: [
       "We start it off by conducting thorough assessments to discover gaps in the organisation’s cybersecurity defences.",
       "This includes identifying weak points in systems, understanding employee awareness levels, and recognising the types of threats most likely to target your organisation.",
@@ -56,7 +56,7 @@ export const accordion = [
     ],
   },
   {
-    title: "TRANSFORM",
+    title: "Transform",
     content: [
       "Building on the insights gained from the discovery phase, we move on to transform your organisation's cybersecurity posture by:",
       "Providing targeted employee training on cybersecurity best practices, such as phishing awareness and social engineering prevention.",
@@ -66,7 +66,7 @@ export const accordion = [
     ],
   },
   {
-    title: "THRIVE",
+    title: "Thrive",
     content: [
       "With a comprehensive discovery and Transformation, your business organisation is set to thrive. We are here to help you continuously update your cybersecurity measures, staying ahead of emerging threats, and promote a culture of security awareness.",
       "We are your trusted partner when it comes to:",

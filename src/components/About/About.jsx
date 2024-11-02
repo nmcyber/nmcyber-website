@@ -26,10 +26,10 @@ const About = () => {
         },
       ]}
     >
-      <div className='flex flex-col relative z-30 gap-x-6 w-full px-8 lg:px-16 xl:px-24  '>
-        <div>
+      <div className='flex flex-col min-h-[85dvh] relative z-30 gap-x-6 w-full px-8 lg:px-16 xl:px-24  '>
+        {/* <div>
           <Counter />
-        </div>
+        </div> */}
         <div className=' flex'>
           <>
             <Accordian />

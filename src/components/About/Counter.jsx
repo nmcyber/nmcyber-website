@@ -3,6 +3,7 @@ import { countUp } from "../../Constants/index";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { cyberlogo } from "@/assets";
+import SectionWrapper from "../shared/SectionWrapper";
 
 const Counter = () => {
   const [visible, setVisible] = useState(false);
@@ -14,8 +15,29 @@ const Counter = () => {
   };
 
   return (
-    <section className="w-full px-8 lg:px-16 xl:px-24 py-6">
-      <div className="flex gap-x-20  flex-wrap ">
+    <SectionWrapper
+      images={[
+        {
+          src: '',
+          position:
+            "absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600",
+          style: { objectFit: "cover", height: "300px", width: "300px" },
+          alt: "Small Ellipse",
+        },
+        {
+          src: '',
+          position: "absolute top-[5%] left-[43%] z-10",
+          alt: "Small Ellipse",
+        },
+        {
+          src: '',
+          position: "absolute top-[10%] left-[80%] z-10",
+          alt: "Large Ellipse",
+        },
+      ]}
+    >
+    <section className=" relative z-40 w-full px-8 lg:px-16 xl:px-24 py-6">
+      <div className="flex gap-x-20 flex-wrap z-40 ">
         <div className="flex bg-n-5 rounded-md w-[40%] p-5 max-lg:w-full max-lg:justify-center max-lg:items-center">
           <div>
             <img src={cyberlogo} alt="Banner" width={250} />
@@ -50,6 +72,7 @@ const Counter = () => {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 
