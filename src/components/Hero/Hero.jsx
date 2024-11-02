@@ -8,7 +8,7 @@ import SectionWrapper from "../shared/SectionWrapper";
 const Hero = () => {
   return (
     <>
-    {/* <SectionWrapper
+    <SectionWrapper
       images={[
         {
           src: circuit,
@@ -27,10 +27,10 @@ const Hero = () => {
           alt: 'Large Ellipse',
         },
       ]}
-    > */}
+    >
 
     <section className=" relative w-full bg-color-1 min-h-[98dvh] pt-32 max-lg:pt-36  ">
-      <div className="w-full px-8 lg:px-16 xl:px-24">
+      <div className="w-full px-8 lg:px-16 xl:px-24 outline">
         <div className=" flex flex-wrap gap-x-5 h-[100%] relative z-20 mx-auto ">
                     {/* LEFT COLUMN */}
           <div className= "flex flex-col justify-between gap-4 bg-blend-exclusion text-center md:text-start pb-0 w-full md:w-2/4 ">
@@ -52,11 +52,12 @@ const Hero = () => {
             <img className=" " src={poster} alt="poster" width={850} />
           </div>
         </div>
-        <BackgroundArtwork />
+        {/* <BackgroundArtwork /> */}
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent "></div>
       </div>
+        
     </section>
-    {/* </SectionWrapper> */}
+    </SectionWrapper>
     </>
   );
 };

@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { shield } from "@/assets";
 import emailjs from "emailjs-com";
+import SectionWrapper from "../shared/SectionWrapper";
+import { circuit, largeEllipse, smallEllipse } from "@/assets";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -53,6 +56,7 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.table(e)
     if (validate()) {
       setIsSending(true);
 
@@ -88,10 +92,30 @@ const ContactUs = () => {
   };
 
   return (
-    <section>
-      <div className="flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24 py-14 max-lg:py-4 font-jarkata h-scrren">
-        <div className="w-2/4 max-md:w-full mx-auto flex justify-end ">
-          <div className=" w-3/4 p-10 m-2 shadow-md rounded-3xl border-4 border-color-4 mt-8">
+    <SectionWrapper
+    images={[
+      {
+        src: circuit,
+        position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
+        style: { objectFit: 'cover', height: '300px', width: '300px' },
+        alt: 'Small Ellipse',
+      },
+      {
+        src: smallEllipse,
+        position: 'absolute top-[5%] left-[43%] z-10',
+        alt: 'Small Ellipse',
+      },
+      {
+        src: largeEllipse,
+        position: 'absolute top-[10%] left-[80%] z-10',
+        alt: 'Large Ellipse',
+      },
+    ]}
+  >
+      <div className=" relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24 py-14 max-lg:py-4 font-jakarta h-max">
+        <div className=" relative w-2/4 max-md:w-full mx-auto flex justify-end outline outline-orange-400 ">
+        <img src={shield} alt="" className=" absolute z-40 inset-0 h-[35%]" />
+          <div className=" w-3/4 p-10 m-2 shadow-md rounded-3xl border-4 border-color-4 mt-8 outline outline-fuchsia-600">
             <h2 className="text-[21px] lg:text-[32px] font-bold text-n-2 mb-2 text-center   ">
               Contact Us
             </h2>
@@ -211,7 +235,7 @@ const ContactUs = () => {
           </h1>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

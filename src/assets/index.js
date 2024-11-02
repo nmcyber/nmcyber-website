@@ -7,6 +7,7 @@ export { default as graduationHat } from "./icons/grad_hat.png";
 // Logos
 export { default as logo } from "./images/NMCyber_logo.png";
 export { default as cyberlogo } from './images/cyberlogo.webp';
+export { default as shield } from './images/shield.webp';
 
 // SVG Illustrations
 export { default as loops } from "./svg/Looper.svg";

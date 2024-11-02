@@ -2,7 +2,7 @@ import { useState } from "react";
 import { countUp } from "../../Constants/index";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-import Banner from "../../assets/cyberlogo.png";
+import { cyberlogo } from "@/assets";
 
 const Counter = () => {
   const [visible, setVisible] = useState(false);
@@ -18,7 +18,7 @@ const Counter = () => {
       <div className="flex gap-x-20  flex-wrap ">
         <div className="flex bg-n-5 rounded-md w-[40%] p-5 max-lg:w-full max-lg:justify-center max-lg:items-center">
           <div>
-            <img src={Banner} alt="Banner" width={250} />
+            <img src={cyberlogo} alt="Banner" width={250} />
           </div>
           <div className=" flex items-center justify-center font-jarkata text-[32px] text-n-1 font-bold ">
             <h1>Our Impact With You</h1>

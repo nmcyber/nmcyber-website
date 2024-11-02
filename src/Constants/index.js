@@ -1,3 +1,5 @@
+import { clock, graduationHat, lock_n_key, pc } from "@/assets";
+
 export const navigation = [
   {
     id: "0",
@@ -47,22 +49,22 @@ export const countUp =[
 export const services =[
   {
     id:"1",
-    img:"",
+    img: clock,
     service:"Cybersecurity Readlines",
   },
   {
     id:"2",
-    img:"",
+    img: lock_n_key,
     service:"Cybersecurity Assesment",
   },
   {
     id:"3",
-    img:"",
+    img: pc,
     service:"Screening Candidate for Hiring",
   },
   {
     id:"4",
-    img:"",
+    img: graduationHat,
     service:"Cybersecurity Awareness & Training",
   },
 ];
