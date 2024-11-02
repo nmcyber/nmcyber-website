@@ -1,4 +1,4 @@
-import { circuit, cyberlogo, largeEllipse, smallEllipse } from "@/assets";
+import { binaries, cyberlogo, largeEllipse, smallEllipse } from "@/assets";
 import SectionWrapper from "../shared/SectionWrapper";
 import Accordian from "./Accordian";
 import Counter from "./Counter";
@@ -8,15 +8,17 @@ const About = () => {
     <SectionWrapper
       images={[
         {
-          src: circuit,
+          src: binaries,
+          className: ' ~w-72/96 opacity-90 ',
           position:
-            "absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600",
-          style: { objectFit: "cover", height: "300px", width: "300px" },
+            "absolute top-[10%] right-[30%] z-20 overflow-hidden outline-0 outline-green-600",
+          style: { objectFit: "cover" },
           alt: "Small Ellipse",
         },
         {
           src: smallEllipse,
-          position: "absolute top-[5%] left-[43%] z-10",
+          className: ' aspect-square ~w-16/48 ',
+          position: "absolute -top-[9%] left-[43%] z-[10]",
           alt: "Small Ellipse",
         },
         {
@@ -26,7 +28,7 @@ const About = () => {
         },
       ]}
     >
-      <div className='flex flex-col min-h-[85dvh] relative z-30 gap-x-6 w-full px-8 lg:px-16 xl:px-24  '>
+      <div className='flex flex-col min-h-[85dvh] relative z-30 gap-x-6 w-full ~py-4/24 px-8 lg:px-16 xl:px-24 outline-0 outline-orange-500 '>
         {/* <div>
           <Counter />
         </div> */}

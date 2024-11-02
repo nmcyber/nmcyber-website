@@ -1,65 +1,67 @@
-
-import { Button } from "../ui/button";
-import { poster } from "@/assets";
-import BackgroundArtwork from "@/components/shared/BackgroundArtwork";
-import { circuit, largeEllipse, smallEllipse } from "@/assets";
-import SectionWrapper from "../shared/SectionWrapper";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { poster, circuit, largeEllipse, smallEllipse, binariesImage, worldGlobe, cyberWaves, inverseCyberWaves } from "@/assets";
+import SectionWrapper from '../shared/SectionWrapper';
+import { LeftColumn, RightColumn } from './HeroColumns';
 
 const Hero = () => {
   return (
-    <>
     <SectionWrapper
       images={[
         {
           src: circuit,
-          position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
-          style: { objectFit: 'cover', height: '300px', width: '300px' },
-          alt: 'Small Ellipse',
+          alt: 'Circuit',
+          style: { objectFit: 'cover' },
+          position: 'absolute top-[15%] left-[50%] z-20 opacity-80',
+          className: 'aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden',
         },
         {
           src: smallEllipse,
-          position: 'absolute top-[5%] left-[43%] z-10',
           alt: 'Small Ellipse',
+          position: 'absolute top-[5%] left-[43%] z-10 opacity-70 ',
         },
         {
           src: largeEllipse,
-          position: 'absolute top-[10%] left-[80%] z-10',
           alt: 'Large Ellipse',
+          position: 'absolute top-[10%] left-[80%] opacity-50 -z-[5]',
+        },
+        {
+          src: binariesImage,
+          alt: 'Large Ellipse',
+          style: { objectFit: 'contain' },
+          position: 'absolute top-[1%] right-0 z-30',
+          className: 'aspect-squaree ~w-48/72 opacity-70 overflow-hidden',
         },
       ]}
     >
-
-    <section className=" relative w-full bg-color-1 min-h-[98dvh] pt-32 max-lg:pt-36  ">
-      <div className="w-full px-8 lg:px-16 xl:px-24 outline">
-        <div className=" flex flex-wrap gap-x-5 h-[100%] relative z-20 mx-auto ">
-                    {/* LEFT COLUMN */}
-          <div className= "flex flex-col justify-between gap-4 bg-blend-exclusion text-center md:text-start pb-0 w-full md:w-2/4 ">
-            <h1 className=" font-jarkata text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-8xl lg:leading-tight xl:leading-tight 2xl:leading-snug font-medium pb-3 ">
-              Empowering You To Thrive In <br/>And With Cybersecurity
-            </h1>
-            <p className=" font-poppins ~text-lg/xl ">
-            At NMCYBER, we pride in turning your workforce into cyber
-            &#13; warriors. Our innovative approach to cybersecurity awareness and
-            &#13; training doesn&#39;t just protect your data, it transforms your entire
-            &#13; organisation&#46;
-            </p>
-            <div className="flex gap-10 mx-5 items-center m-4">
-              <Button className=' font-semibold ~px-6/8 ~py-4/8 ~text-lg/2xl rounded-full bg-gradient-to-l from-[#64cdf6] to-transparent backdrop-blur-md bg-white/0'>Secure Your Business</Button>
-            </div>
-          </div>
-                    {/* RIGHT COLUMN */}
-          <div className="flex justify-center items-center w-1/5 mx-auto">
-            <img className=" " src={poster} alt="poster" width={850} />
+      <section className="relative grid w-full bg-color-1 2xl:min-h-[90dvh] ~py-4/32 max-lg:pt-36  border-0 border-fuchsia-500">
+        <div className=" relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 outline-0 outline-lime-400">
+          <div className=" flex flex-col sm:flex-col md:flex-row gap-x-5 h-full relative z-40 mx-auto outline-0 outline-blue-400 ">
+            <LeftColumn />
+            <RightColumn />
           </div>
         </div>
-        {/* <BackgroundArtwork /> */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent "></div>
-      </div>
-        
-    </section>
+          <>
+          </>
+      </section>
+          <GradientOverlay />
     </SectionWrapper>
-    </>
   );
 };
+
+
+const GradientOverlay = () => (
+  <div 
+  style={{
+    animation: 'slide 30s ease-in-out infinite',
+    backgroundImage: ` url(${inverseCyberWaves})`,
+    backgroundPosition: 'bottom center',
+    backgroundRepeat: 'repeat-x',
+    backgroundSize: 'cover',
+    opacity: 0.8,
+    zIndex: 15 
+    }}
+  className="absolute z-[11] -bottom-[20%] left-0 w-full h-2/3 bg-gradient-to-t from-background to-transparent " />
+);
 
 export default Hero;

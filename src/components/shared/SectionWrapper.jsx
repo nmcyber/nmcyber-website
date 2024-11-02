@@ -1,3 +1,4 @@
+import React from 'react';
 
 const SectionWrapper = ({ children, className = "", images = [] }) => {
   return (
@@ -11,17 +12,8 @@ const SectionWrapper = ({ children, className = "", images = [] }) => {
           <img src={image.src} alt={image.alt} style={image.style} />
         </div>
       ))}
-
-      {/* Transparent Overlay */}
-    <div className="absolute z-10 inset-0 bg-[rgba(0,21,48,0.51)] outline-0 outline-orange-400 "></div>
-    {/* <!-- Blurry Overlay --> */}
-    <div className="absolute z-10 inset-0 backdrop-blur-[80.5px] "></div>
-    
-      {/* {overlay && (
-        <div className={`absolute inset-0 ${overlay.className}`}>
-          {overlay.content}
-        </div>
-      )} */}
+      <div className="absolute z-20 inset-0 bg-[rgba(0,21,48,0.51)] "></div>
+      <div className="absolute z-10 inset-0 backdrop-blur-[80.5px] "></div>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { circuit, largeEllipse, smallEllipse } from "@/assets";
+import { circuit, largeEllipse, loops, smallEllipse, spiralLoop } from "@/assets";
 import { services } from "../../Constants";
 import SectionWrapper from "../shared/SectionWrapper";
 import { Button } from "../ui/button";
@@ -8,26 +8,36 @@ const Solutions = () => {
     <SectionWrapper
     images={[
       {
-        src: circuit,
-        position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
-        style: { objectFit: 'cover', height: '300px', width: '300px' },
+        src: spiralLoop,
+        className: ' ~w-36/72 ~h-full opacity-60 ',
+        position: 'absolute top-[5%] left-0 z-20 opacity-90 overflow-hidden outline-0 outline-green-600',
+        style: { objectFit: 'cover' },
+        alt: 'Small Ellipse',
+      },
+      {
+        src: spiralLoop,
+        className: ' ~h-full opacity-60 transform scale-x-[-1] ',
+        position: 'absolute top-[30%] right-0 z-20 opacity-90 overflow-hidden outline-0 outline-green-600',
+        style: { objectFit: 'cover' },
         alt: 'Small Ellipse',
       },
       {
         src: smallEllipse,
-        position: 'absolute top-[5%] left-[43%] z-10',
+        className: ' aspect-square ~w-24/48 opacity-60 ',
+        position: 'absolute top-[14%] left-[35%] z-10',
         alt: 'Small Ellipse',
       },
       {
         src: largeEllipse,
+        className: ' aspect-square ~w-52/96 opacity-60 ',
         position: 'absolute top-[10%] left-[80%] z-10',
         alt: 'Large Ellipse',
       },
     ]}
   >
-      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24 lg:py-16 font-jakarta border-0 border-orange-400 ">
+      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24 ~py-8/32 font-jakarta border-0 border-orange-400 ">
         <div className="flex flex-col justify-center items-center">
-          <h3 className="text-color-4 text-[18px]">-NMCYBER SOLUTIONS</h3>
+          <h3 className="text-color-4 ~text-xs/md text-tertiary">&ndash;NMCYBER SOLUTIONS</h3>
           <h1 className="text-n-2 text-[50px] max-md:text-[40px] font-semibold">
             Our Cybersecurity Solutions
           </h1>

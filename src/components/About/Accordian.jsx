@@ -58,8 +58,8 @@ const Accordion = () => {
           &ndash;WHY NMCYBER
         </h2>
         <div className="mt-4">
-          <h1 className="text-white capitalize font-bold font-jarkata text-4xl sm:text-5xl md:text-6xl">
-            discover&#46;&nbsp;transform&#46;&nbsp;thrive&#46;
+          <h1 className="text-white text-wrap capitalize font-bold font-jarkata text-4xl sm:text-5xl md:text-6xl">
+            discover&#46; transform&#46; thrive&#46;
           </h1>
           <p className="mt-2 font-poppins text-lg">
             Our innovative approach to cybersecurity awareness and training

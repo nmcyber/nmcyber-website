@@ -29,23 +29,23 @@ const Header = () => {
     setOpenNavigation(false);
   };
   return (
-    <header className={` fixed top-0 left-0  z-50 backdrop-blur-sm ${openNavigation ?"bg-color-1" :""} w-full h-24 lg:bg-transparent`}  >
-      <div className=" flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4">
-        <a className=" flex-shrink-0 w-[12rem] xl:mr-8 " href="/">
+    <header className={` fixed top-0 left-0 z-50 backdrop-blur-sm ${openNavigation ?"bg-color-1" :""} w-full h-24 lg:bg-transparent`}  >
+      <div className=" relative flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4">
+        <a className=" flex-shrink-0 ~w-24/48 xl:mr-8 " href="/">
           <img
             className="w-full"
             src={logo}
             alt="logo"
-            height={220}
+            // height={220}
             width={180}
           />
         </a>
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-24 left-0 right-0  bg-color-1 max-lg:h-screen lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+          } fixed top-24 left-0 right-0 bg-color-1 max-lg:h-screen lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
-          <div className={`relative z-2 flex flex-col  mb-14 items-center justify-center h-full lg:h-auto m-auto lg:flex-row  ${openNavigation ?"-top-20" :""} `}>
+          <div className={`relative z-50 flex flex-col  mb-14 items-center justify-center h-full lg:h-auto m-auto lg:flex-row  ${openNavigation ? " -top-20" :""} `}>
             {navigation.map((item) => (
               <a
                 key={item.id}
@@ -68,6 +68,7 @@ const Header = () => {
         >
           Contact Us
         </button>
+        
         <button
           className= {`lg:hidden z-2 size-10 text-color-4 rounded-md ${openNavigation ? "mr-12" : "mr-8"} mb-24`}
           onClick={toggleNavigation}
