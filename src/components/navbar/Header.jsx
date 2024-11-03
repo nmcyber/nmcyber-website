@@ -5,6 +5,7 @@ import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { logo } from "@/assets";
 import { Background } from "../shared/Background";
+import { GradientButton } from "../shared/GradientButton";
 
 const Header = () => {
   
@@ -29,7 +30,7 @@ const Header = () => {
     setOpenNavigation(false);
   };
   return (
-    <header className={` fixed top-0 left-0 z-50 backdrop-blur-sm ${openNavigation ?"bg-color-1" :""} w-full h-24 lg:bg-transparent`}  >
+    <header className={` fixed top-0 left-0 z-50 backdrop-blur-[30px] ${openNavigation ?"bg-color-1" :""} w-full h-24 lg:bg-transparent`}  >
       <div className=" relative flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4">
         <a className=" flex-shrink-0 ~w-24/48 xl:mr-8 " href="/">
           <img
@@ -64,9 +65,10 @@ const Header = () => {
           <Background />
         </nav>
         <button
-          className={` hidden lg:inline-block mb-14 lg:mr-10 text-white text-[21px] font-semibold bg-gradient-to-r from-color-3 to-color-4 px-8 p-1 rounded-full `}
+          className={` hidden lg:inline-block mb-14 lg:mr-10  `}
         >
-          Contact Us
+          <GradientButton children={"Contact Us"} />
+          
         </button>
         
         <button

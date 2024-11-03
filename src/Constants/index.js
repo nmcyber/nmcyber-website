@@ -1,4 +1,4 @@
-import { clock, graduationHat, lock_n_key, pc } from "@/assets";
+import { clock, facebook, graduationHat, instagram, linkedin, lock_n_key, pc, youtube } from "@/assets";
 
 export const navigation = [
   {
@@ -100,6 +100,43 @@ export const services =[
     service:"Cybersecurity Awareness & Training",
   },
 ];
+
+export const socialMedia = [
+  {
+    id:"1",
+    img: facebook
+  },
+  {
+    id:"2",
+    img: instagram
+  },
+  {
+    id:"3",
+    img: youtube
+  },
+  {
+    id:"4",
+    img: linkedin 
+  },
+];
+
+export const contactInfo = [
+  {
+    id:"1",
+    icon:"",
+    desc:"+61 421212628"
+  },
+  {
+    id:"2",
+    icon:"",
+    desc:"nickson.karie@nmcyber.com.au"
+  },
+  {
+    id:"3",
+    icon:"",
+    desc:"Perth WA 6064, Australia"
+  },
+]
 
 
 

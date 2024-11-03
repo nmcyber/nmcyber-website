@@ -3,7 +3,7 @@ import { countUp } from "../../Constants/index";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { cyberlogo } from "@/assets";
-import SectionWrapper from "../shared/SectionWrapper";
+// import SectionWrapper from "../shared/SectionWrapper";
 
 const Counter = () => {
   const [visible, setVisible] = useState(false);
@@ -57,7 +57,7 @@ const Counter = () => {
                   >
                     <CountUp
                       end={visible ? item.num : 0}
-                      duration={7}
+                      duration={3}
                       redraw={true}
                     />
                   </VisibilitySensor>

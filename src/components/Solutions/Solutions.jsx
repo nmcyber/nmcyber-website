@@ -46,7 +46,7 @@ const Solutions = () => {
           {services.map((item, i) => (
             <div key={i} className="w-full m-2 ">
               <div className=" p-4 text-[21px] text-n-2 font-semibold flex flex-col gap-4 max-md:justify-center max-md:items-center  ">
-                <img className="py-4 aspect-square w-48 h-48 min-md:w-52 min-md:h-52 self-center " src={item.img} alt="" />
+                <img className="py-4 aspect-square w-44 h-44 min-md:w-48 min-md:h-48 self-center " src={item.img} alt="" />
                 <h2 className="my-4 line-clamp-1 text-center outline-0 outline-fuchsia-500 ">{item.service}</h2>
                 <div className=" flex justify-center m-4">
                 <Button className=' font-semibold ~px-6/8 ~py-4/8 ~text-lg/2xl rounded-full bg-gradient-to-l from-[#64cdf6] to-transparent backdrop-blur-md bg-white/0'>See More</Button>

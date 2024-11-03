@@ -3,6 +3,7 @@ import Header from "./components/navbar/Header";
 import About from "./components/About/About";
 import Home from "./components/Hero/Home";
 import Solutions from "./components/Solutions/Solutions";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/solutions" element={<Solutions/>}/>
       </Routes>
+      <Footer/>
     </Router>
   );
 }

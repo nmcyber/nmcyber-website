@@ -23,3 +23,8 @@ export { default as smallEllipse } from "./svg/small_ellipse.svg";
 export { default as largeEllipse } from "./svg/large_ellipse.svg";
 export { default as circularVector } from "./svg/circular_vector.svg";
 export { default as concetricLoops } from "./svg/concentric_loops.svg";
+export { default as facebook } from "./svg/facebook.svg";
+export { default as instagram } from "./svg/instagram.svg";
+export { default as linkedin } from "./svg/linkedin.svg";
+export { default as youtube } from "./svg/youtube.svg";
+export { default as copyright } from "./svg/copyright-sign.svg";
