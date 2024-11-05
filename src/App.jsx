@@ -4,15 +4,17 @@ import About from "./components/About/About";
 import Home from "./components/Hero/Home";
 import Solutions from "./components/Solutions/Solutions";
 import Footer from "./components/Footer/Footer";
+import ContactUs from "./components/Contact/ContactUs";
 
 function App() {
   return (
     <Router>
-      <Header />
+      <Header/>
       <Routes className= "">
         <Route exact path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/solutions" element={<Solutions/>}/>
+        <Route path="/contact" element={<ContactUs/>}/>
       </Routes>
       <Footer/>
     </Router>

@@ -8,24 +8,24 @@ export const navigation = [
   },
   {
     id: "1",
+    title: "About",
+    url: "/about",
+  },
+  {
+    id: "2",
     title: "Solutions",
     url: "/solutions",
   },
   {
-    id: "2",
-    title: "Platform",
-    url: "/platform",
-  },
-  {
     id: "3",
     title: "Resources",
-    url: "/resources",
+    url: "/",
   },
   {
     id: "4",
-    title: "About",
-    url: "/about",
-  }
+    title: "Platform",
+    url: "/",
+  },
 ];
 
 export const countUp =[
@@ -104,19 +104,23 @@ export const services =[
 export const socialMedia = [
   {
     id:"1",
-    img: facebook
+    img: facebook,
+    url:"https://www.facebook.com",
   },
   {
     id:"2",
-    img: instagram
+    img: instagram,
+    url:"",
   },
   {
     id:"3",
-    img: youtube
+    img: youtube,
+    url:"",
   },
   {
     id:"4",
-    img: linkedin 
+    img: linkedin,
+    url:"",
   },
 ];
 
@@ -129,7 +133,7 @@ export const contactInfo = [
   {
     id:"2",
     icon:"",
-    desc:"nickson.karie@nmcyber.com.au"
+    desc:"info@nmcyber.com.au"
   },
   {
     id:"3",

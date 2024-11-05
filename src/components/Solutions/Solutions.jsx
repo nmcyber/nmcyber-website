@@ -35,7 +35,7 @@ const Solutions = () => {
       },
     ]}
   >
-      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24 ~py-8/32 font-jakarta border-0 border-orange-400 ">
+      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24  font-jakarta border-0 border-orange-400 ~py-28/96 md:~py-4/32 ">
         <div className="flex flex-col justify-center items-center">
           <h3 className="text-color-4 ~text-xs/md text-tertiary">&ndash;NMCYBER SOLUTIONS</h3>
           <h1 className="text-n-2 text-[50px] max-md:text-[40px] font-semibold">
@@ -45,7 +45,7 @@ const Solutions = () => {
         <div className="flex justify-between max-md:flex-wrap max-lg:py-8 xl:py-10 flex-shrink  ">
           {services.map((item, i) => (
             <div key={i} className="w-full m-2 ">
-              <div className=" p-4 text-[21px] text-n-2 font-semibold flex flex-col gap-4 max-md:justify-center max-md:items-center  ">
+              <div className=" p-4 text-[21px] text-n-2 font-semibold flex flex-col gap-4 max-md:justify-center max-md:items-center shadow-2xl ">
                 <img className="py-4 aspect-square w-44 h-44 min-md:w-48 min-md:h-48 self-center " src={item.img} alt="" />
                 <h2 className="my-4 line-clamp-1 text-center outline-0 outline-fuchsia-500 ">{item.service}</h2>
                 <div className=" flex justify-center m-4">
@@ -55,6 +55,7 @@ const Solutions = () => {
                   </button> */}
                 </div>
               </div>
+              <div className="glow-after"/>
             </div>
           ))}
         </div>

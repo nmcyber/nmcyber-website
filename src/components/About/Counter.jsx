@@ -2,7 +2,7 @@ import { useState } from "react";
 import { countUp } from "../../Constants/index";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-import { cyberlogo } from "@/assets";
+import {  securityLogo } from "@/assets";
 // import SectionWrapper from "../shared/SectionWrapper";
 
 const Counter = () => {
@@ -36,21 +36,21 @@ const Counter = () => {
       //   },
       // ]}
     // >
-    <section className=" relative w-full px-8 lg:px-16 xl:px-24 py-6">
+    <section className=" relative w-full px-8 lg:px-16 xl:px-24 ">
       <div className="flex gap-x-20 flex-wrap relative z-30 ">
-        <div className="flex bg-n-5 rounded-md w-[40%] p-5 max-lg:w-full max-lg:justify-center max-lg:items-center">
+        <div className="flex bg-[rgba(0,21,48,0.51)] rounded-lg w-[40%] p-5 max-lg:w-full max-lg:justify-center gap-2 max-lg:items-center ">
           <div>
-            <img src={cyberlogo} alt="Banner" width={250} />
+            <img src={securityLogo} alt="Banner" width={250} className=" " />
           </div>
-          <div className=" flex items-center justify-center font-jarkata text-[32px] text-n-1 font-bold ">
+          <div className=" flex items-center justify-center  font-jarkata text-[32px] font-bold ">
             <h1>Our Impact With You</h1>
           </div>
         </div>
         <div className="flex items-center justify-center lg:w-[50%] ">
-          <div className="flex flex-col space-y-6 md:flex-row md:space-x-6 p-4 ">
+          <div className="flex flex-row justify-center items-center md:space-x-6 p-4 ">
             {countUp.map((item, i) => (
               <div className="" key={i}>
-                <h1 className=" flex items-center justify-center text-[54px] text-color-2 font-bold ">
+                <h1 className=" flex items-center justify-center text-[54px] text-tertiary font-bold ">
                   <VisibilitySensor
                     onChange={onVisibilityChange}
                     partialVisibility
@@ -63,7 +63,7 @@ const Counter = () => {
                   </VisibilitySensor>
                   <h1>+</h1>
                 </h1>
-                <h3 className=" font-jarkata text-[24px] text-center font-semibold text-n-2">
+                <h3 className=" font-jarkata text-[24px] text-center font-semibold ">
                   {item.title}
                 </h3>
               </div>
