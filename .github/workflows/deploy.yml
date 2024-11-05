@@ -17,6 +17,12 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm run build
+      
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
 
   deploy:
     name: Deploy
