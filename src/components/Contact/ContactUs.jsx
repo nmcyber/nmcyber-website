@@ -226,7 +226,7 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
-        <div className="w-2/4 max-md:w-full p-8">
+        <div className="w-2/4 max-md:w-full p-8 mb-5">
           <h3 className="text-color-4 text-[18px] mb-4">—NMCYBER PLATFORM</h3>
           <h1 className="text-n-2 text-[21px]">
             <b>NMCYBER</b> not only helps you to protect sensitive customer and
