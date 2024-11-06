@@ -3,6 +3,7 @@ import { countUp } from "../../Constants/index";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import {  securityLogo } from "@/assets";
+import SectionWrapper from "../shared/SectionWrapper";
 // import SectionWrapper from "../shared/SectionWrapper";
 
 const Counter = () => {
@@ -36,7 +37,7 @@ const Counter = () => {
       //   },
       // ]}
     // >
-    <section className=" relative w-full px-8 lg:px-16 xl:px-24 ">
+    <section className=" relative w-full px-8 lg:px-16 xl:px-24 bg-opacity-100 ">
       <div className="flex gap-x-20 flex-wrap relative z-30 ">
         <div className="flex bg-[rgba(0,21,48,0.51)] rounded-lg w-[40%] p-5 max-lg:w-full max-lg:justify-center gap-2 max-lg:items-center ">
           <div>

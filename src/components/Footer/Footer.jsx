@@ -2,6 +2,7 @@ import { copyright, logo } from "@/assets";
 import { GradientButton } from "../shared/GradientButton";
 import { FaArrowRight } from "react-icons/fa";
 import { contactInfo, navigation, socialMedia } from "@/Constants";
+import SectionWrapper from "../shared/SectionWrapper";
 
 const Footer = () => {
   return (
@@ -49,7 +50,7 @@ const Footer = () => {
           <h1 className="text-tertiary font-semibold text-[24px]  lg:mb-2 ">
             Quick Links
           </h1>
-          <div className="flex flex-col space-y-3 text-[21px] md:text-[21px] font-semibold mx-2    ">
+          <div className="flex flex-col max-md:w-20 space-y-3 text-[21px] md:text-[24px] font-semibold mx-2    ">
             {navigation.map((item, index) => (
               <a
                 className=" hover:translate-x-2 hover:transition-colors hover:text-tertiary transform ease-in-out duration-500  "
@@ -65,7 +66,7 @@ const Footer = () => {
           <h1 className="text-tertiary font-semibold text-[24px] lg:mr-24 lg:mb-2 ">
             Contact Info
           </h1>
-          <ul className="flex flex-col md:items-start space-y-3 text-[21px] md:text-[21px] font-semibold mx-2 ">
+          <ul className="flex flex-col md:items-start space-y-3 text-[21px] md:text-[24px] max-md:w-fit font-semibold mx-2 ">
             {contactInfo.map((item, index) => (
               <li key={index}>
                 <div className="hover:translate-x-2 hover:transition-colors hover:text-tertiary transform ease-in-out duration-500 ">
@@ -79,12 +80,9 @@ const Footer = () => {
       </div>
 
       <hr className="w-full m-4 mx-auto border-tertiary" />
-      <div className="  flex items-center justify-between pb-4 text-[18px] mx-2  ">
-        <div className="flex">
-          <img className="w-4" src={copyright} alt="" />
-          <p>2024 NMCyber. All Rights Reserved</p>
-        </div>
-        <span>Terms & Policy</span>
+      <div className="  flex items-center justify-self-center pb-4 text-[18px]  ">
+        <img className="w-4" src={copyright} alt="" />
+        <p>2024 NMCyber. All Rights Reserved</p>
       </div>
     </footer>
   );
