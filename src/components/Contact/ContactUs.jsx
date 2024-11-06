@@ -3,6 +3,7 @@ import { shield } from "@/assets";
 import emailjs from "emailjs-com";
 import SectionWrapper from "../shared/SectionWrapper";
 import { circuit, largeEllipse, smallEllipse } from "@/assets";
+import TurnstileWidget from "./CloudflareTurnstileWidget";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -215,7 +216,8 @@ const ContactUs = () => {
                   <p className="text-red-500 text-sm">{errors.message}</p>
                 )}
               </div>
-
+              {/* ---- Cloudflare Capture Widget ---- */}
+              <TurnstileWidget />
               <button
                 type="submit"
                 className="w-full py-2 px-4 bg-gradient-to-r from-color-3 to-color-4 text-white font-semibold rounded-full outline-none "

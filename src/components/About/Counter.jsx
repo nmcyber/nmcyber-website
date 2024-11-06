@@ -44,7 +44,8 @@ const Counter = () => {
             <img src={securityLogo} alt="Banner" width={250} className=" " />
           </div>
           <div className=" flex items-center justify-center  font-jarkata text-[32px] font-bold ">
-            <h1>Our Impact With You</h1>
+            {/* <h1>Our Impact With You</h1> */}
+            <h1>Award Winning</h1>
           </div>
         </div>
         <div className="flex items-center justify-center lg:w-[50%] ">

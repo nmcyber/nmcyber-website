@@ -35,7 +35,7 @@ const Solutions = () => {
       },
     ]}
   >
-      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24  font-jakarta border-0 border-orange-400 ~py-28/96 md:~py-4/32 ">
+      <div className=" relative z-30 w-full px-8 lg:px-16 xl:px-24  font-jakarta border-0 border-orange-400 ~py-16/64 md:~py-4/24 ">
         <div className="flex flex-col justify-center items-center">
           <h3 className="text-color-4 ~text-xs/md text-tertiary">&ndash;NMCYBER SOLUTIONS</h3>
           <h1 className="text-n-2 text-[50px] max-md:text-[40px] font-semibold">

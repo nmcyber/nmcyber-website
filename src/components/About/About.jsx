@@ -28,7 +28,7 @@ const About = () => {
         },
       ]}
     >
-      <div className='flex flex-col min-h-[85dvh] relative z-30 gap-x-6 w-full ~py-12/16 md:~py-4/24 px-8 lg:px-16 xl:px-24 outline-0 outline-orange-500 '>
+      <div className='flex flex-col min-h-auto relative z-30 gap-x-6 w-full ~py-12/16 md:~py-4/24 px-8 lg:px-16 xl:px-24 border-0 border-orange-500 '>
         {/* <div>
           <Counter />
         </div> */}
