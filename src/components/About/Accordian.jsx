@@ -58,10 +58,12 @@ const Accordion = () => {
           &ndash;WHY NMCYBER
         </h2>
         <div className="mt-4">
-          <h1 className="text-white text-wrap capitalize font-bold font-jarkata text-4xl sm:text-5xl md:text-6xl">
-            discover&#46; transform&#46; thrive&#46;
+          <h1 className=" text-wrap capitalize font-bold text-4xl sm:text-5xl md:text-6xl">
+            <span className=" text-gradient-clip text-white ">discover&#46; </span>
+            <span className=" text-gradient-clip text-white ">transform&#46; </span>
+            <span className=" text-gradient-clip text-white ">thrive&#46;</span>
           </h1>
-          <p className="mt-2 font-poppins text-lg">
+          <p className="mt-6 font-poppins text-lg">
             Our innovative approach to cybersecurity awareness and training
             doesn't just protect your data, it transforms your entire
             organisation.

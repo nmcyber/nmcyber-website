@@ -1,11 +1,19 @@
-import { useState } from "react";
-import { shield } from "@/assets";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import SectionWrapper from "../shared/SectionWrapper";
-import { circuit, largeEllipse, smallEllipse } from "@/assets";
+import { circuit, largeEllipse, smallEllipse, shield } from "@/assets";
 import TurnstileWidget from "./CloudflareTurnstileWidget";
 
-const ContactUs = () => {
+const industries = [
+  "Technology",
+  "Finance",
+  "Healthcare",
+  "Education",
+  "Retail",
+  "Other",
+];
+
+export default function ContactUs() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -18,26 +26,15 @@ const ContactUs = () => {
   const [errors, setErrors] = useState({});
   const [isSending, setIsSending] = useState(false);
 
-  const industries = [
-    "Technology",
-    "Finance",
-    "Healthcare",
-    "Education",
-    "Retail",
-    "Other",
-  ];
-
   const validate = () => {
     const newErrors = {};
-
     if (!formData.fullName) newErrors.fullName = "Full name is required.";
     if (!formData.email) {
       newErrors.email = "Email is required.";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid.";
     }
-    if (!formData.organisation)
-      newErrors.organisation = "Organisation name is required.";
+    if (!formData.organisation) newErrors.organisation = "Organisation name is required.";
     if (!formData.phone) {
       newErrors.phone = "Phone number is required.";
     } else if (!/^\d{10}$/.test(formData.phone)) {
@@ -57,17 +54,14 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.table(e)
     if (validate()) {
       setIsSending(true);
-
-      // login to EmailJs for getting id for the below
       emailjs
         .send(
-          "SERVICE_ID", // Replace with your EmailJS service ID
-          "TEMPLATE_ID", // Replace with your EmailJS template ID
+          "SERVICE_ID",
+          "TEMPLATE_ID",
           formData,
-          "USER_ID" // Replace with your EmailJS user ID
+          "USER_ID"
         )
         .then(
           () => {
@@ -94,133 +88,126 @@ const ContactUs = () => {
 
   return (
     <SectionWrapper
-    images={[
-      {
-        src: circuit,
-        position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
-        style: { objectFit: 'cover', height: '300px', width: '300px' },
-        alt: 'Small Ellipse',
-      },
-      {
-        src: smallEllipse,
-        position: 'absolute top-[5%] left-[43%] z-10',
-        alt: 'Small Ellipse',
-      },
-      {
-        src: largeEllipse,
-        position: 'absolute top-[10%] left-[80%] z-10',
-        alt: 'Large Ellipse',
-      },
-    ]}
-  >
-      <div className=" relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24  font-jakarta h-max ~py-8/32 md:~py-6/36">
-        <div className=" relative w-2/4 max-md:w-full mx-auto flex justify-end outline-0 outline-orange-400 ">
-        <img src={shield} alt="" className=" absolute z-40 inset-0 h-[35%]" />
-          <div className=" w-3/4 p-10 m-2 shadow-md rounded-3xl border-4 border-color-4 mt-8 outline-0 outline-fuchsia-600">
-            <h2 className="text-[21px] lg:text-[32px] font-bold text-n-2 mb-2 text-center ">
+      images={[
+        {
+          src: circuit,
+          position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
+          style: { objectFit: 'cover', height: '300px', width: '300px' },
+          alt: 'Circuit Background',
+        },
+        {
+          src: smallEllipse,
+          position: 'absolute top-[5%] left-[43%] z-10',
+          alt: 'Small Ellipse',
+        },
+        {
+          src: largeEllipse,
+          position: 'absolute top-[10%] left-[80%] z-10',
+          alt: 'Large Ellipse',
+        },
+      ]}
+    >
+      <div className="relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24 font-jakarta h-max py-16 md:py-24">
+        <div className="relative w-full md:w-1/2 mx-auto flex justify-end">
+          <img src={shield} alt="Shield" className="absolute z-40 top-[-5%] aspect-auto hidden md:flex left-0 h-[25%] md:w-auto md:left-[10%] md:h-[25%]" />
+          <div className="w-full md:w-5/6 p-8 m-2 rounded-3xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 shadow-xl">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 text-center">
               Contact Us
             </h2>
-            <p className=" w-28 bg-color-4 h-0.5 m-6 mx-auto "></p>
+            <div className="w-20 h-1 bg-color-4 mx-auto mb-8"></div>
             
-            <form onSubmit={handleSubmit} className="space-y-2 p-2">
-              <div className="md:flex  gap-x-2">
-                <div className="max-md:my-2 w-full">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
                   <input
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-full outline-none "
+                    className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-color-4"
                     placeholder="Full Name"
                   />
                   {errors.fullName && (
-                    <p className="text-red-500 text-sm">{errors.fullName}</p>
+                    <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>
                   )}
                 </div>
-
-                <div className="w-full">
+                <div>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-full outline-none"
-                    placeholder="Email "
+                    className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-color-4"
+                    placeholder="Email"
                   />
                   {errors.email && (
-                    <p className="text-red-500 text-sm">{errors.email}</p>
+                    <p className="text-red-400 text-xs mt-1">{errors.email}</p>
                   )}
                 </div>
               </div>
-              <div className="md:flex gap-x-2 ">
-                <div className="max-md:my-2 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
                   <input
                     type="text"
                     name="organisation"
                     value={formData.organisation}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-full outline-none "
+                    className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-color-4"
                     placeholder="Organisation"
                   />
                   {errors.organisation && (
-                    <p className="text-red-500 text-sm">
-                      {errors.organisation}
-                    </p>
+                    <p className="text-red-400 text-xs mt-1">{errors.organisation}</p>
                   )}
                 </div>
-
-                <div className="w-full">
+                <div>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border rounded-full outline-none"
+                    className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-color-4"
                     placeholder="Phone No."
                   />
                   {errors.phone && (
-                    <p className="text-red-500 text-sm">{errors.phone}</p>
+                    <p className="text-red-400 text-xs mt-1">{errors.phone}</p>
                   )}
                 </div>
               </div>
-
               <div>
                 <select
                   name="industry"
                   value={formData.industry}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-full outline-none"
+                  className="w-full px-4 py-2 rounded-full bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-color-4"
                 >
-                  <option value="">Select Your Industry</option>
+                  <option value="" className="bg-gray-800">Select Your Industry</option>
                   {industries.map((industry) => (
-                    <option key={industry} value={industry}>
+                    <option key={industry} value={industry} className="bg-gray-800">
                       {industry}
                     </option>
                   ))}
                 </select>
                 {errors.industry && (
-                  <p className="text-red-500 text-sm">{errors.industry}</p>
+                  <p className="text-red-400 text-xs mt-1">{errors.industry}</p>
                 )}
               </div>
-
               <div>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border rounded-2xl outline-none"
+                  className="w-full px-4 py-2 rounded-2xl bg-white bg-opacity-20 backdrop-filter backdrop-blur-md border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-color-4"
                   placeholder="Enter Your message here..."
                   rows="4"
                 />
                 {errors.message && (
-                  <p className="text-red-500 text-sm">{errors.message}</p>
+                  <p className="text-red-400 text-xs mt-1">{errors.message}</p>
                 )}
               </div>
-              {/* ---- Cloudflare Capture Widget ---- */}
               <TurnstileWidget />
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-gradient-to-r from-color-3 to-color-4 text-white font-semibold rounded-full outline-none "
+                className="w-full py-3 px-4 bg-gradient-to-r from-color-3 to-color-4 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-color-4 focus:ring-opacity-50"
                 disabled={isSending}
               >
                 {isSending ? "Sending..." : "Send"}
@@ -228,17 +215,16 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
-        <div className="w-2/4 max-md:w-full p-8 mb-5">
-          <h3 className="text-color-4 text-[18px] mb-4">—NMCYBER PLATFORM</h3>
-          <h1 className="text-n-2 text-[21px]">
-            <b>NMCYBER</b> not only helps you to protect sensitive customer and
-            business data but also helps you to enhance the company’s reputation
-            and competitive edge in the market.
+        <div className="w-full md:w-1/2 p-8 mb-8 md:mb-0">
+          <h3 className="text-tertiary ~text-xs/md mb-4 font-semibold">—NMCYBER PLATFORM</h3>
+          <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#64CDF6] to-color-[#1a3f4e]">NMCYBER</span> protects your data and enhances your competitive edge.
           </h1>
+          <p className="text-white text-opacity-80 text-lg">
+            We not only help you safeguard sensitive customer and business information but also boost your company's reputation in the market.
+          </p>
         </div>
       </div>
     </SectionWrapper>
   );
-};
-
-export default ContactUs;
+}

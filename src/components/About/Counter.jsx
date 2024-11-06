@@ -1,83 +1,126 @@
-import { useState } from "react";
-import { countUp } from "../../Constants/index";
+import React from "react";
 import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
-import {  securityLogo } from "@/assets";
-import SectionWrapper from "../shared/SectionWrapper";
-// import SectionWrapper from "../shared/SectionWrapper";
+import { motion, useSpring, useInView, useAnimationControls } from "framer-motion";
+import { countUp } from "../../Constants/index";
+import { securityLogo } from "@/assets";
+
+const AnimatedNumber = ({ number }) => {
+  const controls = useAnimationControls();
+  const isInView = useInView({
+    once: true,
+    margin: "0px 0px -100px 0px"
+  });
+
+  const springValue = useSpring(0, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  React.useEffect(() => {
+    if (isInView) {
+      springValue.set(number);
+    }
+  }, [isInView, number, springValue]);
+
+  return <motion.span>{Math.round(springValue.get())}</motion.span>;
+};
 
 const Counter = () => {
-  const [visible, setVisible] = useState(false);
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
 
-  const onVisibilityChange = (isVisible) => {
-    if (isVisible) {
-      setVisible(true);
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
     }
   };
 
   return (
-    // <SectionWrapper
-      // images={[
-      //   {
-      //     src: ' ',
-      //     // alt: "Small Ellipse",
-      //     position:
-      //       "absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600",
-      //     // style: { objectFit: "cover", height: "300px", width: "300px" },
-      //   },
-      //   {
-      //     src: ' ',
-      //     // alt: "Small Ellipse",
-      //     position: "absolute top-[5%] left-[43%] z-10",
-      //   },
-      //   {
-      //     src: ' ',
-      //     // alt: "Large Ellipse",
-      //     position: "absolute top-[10%] left-[80%] z-10",
-      //   },
-      // ]}
-    // >
-    <section className=" relative w-full px-8 lg:px-16 xl:px-24 bg-opacity-100 ">
-      <div className="flex gap-x-20 flex-wrap relative z-30 ">
-        <div className="flex bg-[rgba(0,21,48,0.51)] rounded-lg w-[40%] p-5 max-lg:w-full max-lg:justify-center gap-2 max-lg:items-center ">
-          <div>
-            <img src={securityLogo} alt="Banner" width={250} className=" " />
-          </div>
-          <div className=" flex items-center justify-center  font-jarkata text-[32px] font-bold ">
-            {/* <h1>Our Impact With You</h1> */}
-            <h1>Award Winning</h1>
-          </div>
-        </div>
-        <div className="flex items-center justify-center lg:w-[50%] ">
-          <div className="flex flex-row justify-center items-center md:space-x-6 p-4 ">
+    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 overflow-hidden">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className="flex flex-wrap gap-8 relative z-30"
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex-1 min-w-[300px] bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
+        >
+          <motion.img
+            src={securityLogo}
+            alt="Security Logo"
+            className="w-40 h-auto"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          />
+          <motion.h2
+            className="text-2xl sm:text-3xl font-bold text-white text-center sm:text-left"
+            variants={itemVariants}
+          >
+            Award Winning
+          </motion.h2>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex-1 min-w-[300px]"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {countUp.map((item, i) => (
-              <div className="" key={i}>
-                <h1 className=" flex items-center justify-center text-[54px] text-tertiary font-bold ">
-                  <VisibilitySensor
-                    onChange={onVisibilityChange}
-                    partialVisibility
-                  >
-                    <CountUp
-                      end={visible ? item.num : 0}
-                      duration={3}
-                      redraw={true}
-                    />
-                  </VisibilitySensor>
-                  <h1>+</h1>
-                </h1>
-                <h3 className=" font-jarkata text-[24px] text-center font-semibold ">
-                  {item.title}
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-4 rounded-lg hover:bg-[rgba(0,21,48,0.3)] transition-colors duration-300"
+              >
+                <h3 className="text-4xl sm:text-5xl text-tertiary font-bold mb-2 flex justify-center items-center">
+                  <AnimatedNumber number={item.num} />
+                  <span className="ml-1">+</span>
                 </h3>
-              </div>
+                <p className="text-lg sm:text-xl text-white font-semibold">
+                  {item.title}
+                </p>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
-      {/* overlay theme color and overlay blur */}
-      <div className="absolute z-20 inset-0 bg-[rgba(0,21,48,0.51)] "></div>
-      <div className="absolute z-[11] inset-0 backdrop-blur-[80.5px] outline-0 outline-lime-300 "></div>
+        </motion.div>
+      </motion.div>
+
+      {/* Background layers */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute z-20 inset-0 bg-[rgba(0,21,48,0.51)]"
+      />
+      <motion.div
+        initial={{ backdropFilter: "blur(0px)" }}
+        animate={{ backdropFilter: "blur(80.5px)" }}
+        transition={{ duration: 1.2 }}
+        className="absolute z-10 inset-0"
+      />
     </section>
-    // </SectionWrapper>
   );
 };
 

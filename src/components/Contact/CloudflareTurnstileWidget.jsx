@@ -1,21 +1,26 @@
-import Turnstile, { useTurnstile } from "react-turnstile";
+import { useState } from "react"
+import Turnstile from "react-turnstile"
 
-// Account ID - 3e90eefc8b7059e6f993c5ccb00c5c2f
+export default function TurnstileWidget({ onVerify, disabled = false }) {
+  const [verified, setVerified] = useState(false)
 
+  const handleVerify = (token) => {
+    setVerified(true)
+    onVerify(token)
+  }
 
-export default function TurnstileWidget() {
-  const turnstile = useTurnstile();
   return (
-    <Turnstile
-      sitekey="0x4AAAAAAAzXJ4yF3diJKVSD"
-      onVerify={(token) => {
-        fetch("/login", {
-          method: "POST",
-          body: JSON.stringify({ token }),
-        }).then((response) => {
-          if (!response.ok) turnstile.reset();
-        });
-      }}
-    />
-  );
+    <div className="my-4">
+      <Turnstile
+        sitekey="0x4AAAAAAAzXJ4yF3diJKVSD"
+        onVerify={handleVerify}
+        onError={() => setVerified(false)}
+        onExpire={() => setVerified(false)}
+        disabled={disabled}
+      />
+      {!verified && (
+        <p className="text-orange-600 text-xs mt-1">Please complete the verification</p>
+      )}
+    </div>
+  )
 }
