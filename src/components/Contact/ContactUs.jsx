@@ -113,7 +113,7 @@ const ContactUs = () => {
     ]}
   >
       <div className=" relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24  font-jakarta h-max ~py-8/32 md:~py-6/36">
-        <div className=" relative w-2/4 max-md:w-full mx-auto flex justify-end outline outline-orange-400 ">
+        <div className=" relative w-2/4 max-md:w-full mx-auto flex justify-end outline-0 outline-orange-400 ">
         <img src={shield} alt="" className=" absolute z-40 inset-0 h-[35%]" />
           <div className=" w-3/4 p-10 m-2 shadow-md rounded-3xl border-4 border-color-4 mt-8 outline outline-fuchsia-600">
             <h2 className="text-[21px] lg:text-[32px] font-bold text-n-2 mb-2 text-center ">
