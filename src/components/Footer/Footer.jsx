@@ -6,7 +6,25 @@ import SectionWrapper from "../shared/SectionWrapper";
 
 const Footer = () => {
   return (
-    <footer className=" container mt-2 lg:mt-6  ">
+    <SectionWrapper
+    images={[
+      {
+        src: '',
+        position: 'absolute top-[5%] left-[50%] z-20 opacity-90 aspect-square w-[300px] h-[300px] p-0 rounded-full overflow-hidden outline-0 outline-green-600',
+        // style: { objectFit: 'cover', height: '300px', width: '300px' },
+      },
+      {
+        src: '',
+        position: 'absolute top-[5%] left-[43%] z-10',
+      },
+      {
+        src: '',
+        position: 'absolute top-[10%] left-[80%] z-10',
+        
+      },
+    ]}
+  >
+    <footer className="relative z-30 container mt-2 lg:mt-6  ">
       <div className="flex w-full max-md:flex-col ">
         <div className=" flex w-full lg:w-[33%] flex-wrap">
           <div className="flex w-full mt-2 -ml-12  ">
@@ -16,7 +34,7 @@ const Footer = () => {
                 NM<span className=" text-tertiary">CYBER</span>
               </b>
               <p className="text-[18px]">
-                Turning Cyber Security Pains Into Gains
+              Empowering You To Thrive
               </p>
             </div>
           </div>
@@ -85,6 +103,7 @@ const Footer = () => {
         <p>2024 NMCyber. All Rights Reserved</p>
       </div>
     </footer>
+    </SectionWrapper>
   );
 };
 
