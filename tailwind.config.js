@@ -1,5 +1,7 @@
 // /** @type {import('tailwindcss').Config} */
 import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
+import { transform } from 'framer-motion'
+import { Scale } from 'lucide-react'
 module.exports = {
     darkMode: ['class'],
     content: {
@@ -49,11 +51,27 @@ module.exports = {
  				to: {
  					height: '0'
  				}
- 			}
+ 			},
+			blink : {
+				'0%' : {
+					opacity : '0.5',
+					transform : 'scale(1)'
+				},
+				'50%' : {
+					opacity : '1.5',
+					transform : 'scale(1.1)'
+				},
+				'100%' : {
+					opacity :'0.5',
+					transform : 'scale(1)'
+
+				}
+			}
  		},
  		animation: {
  			'accordion-down': 'accordion-down 0.2s ease-out',
- 			'accordion-up': 'accordion-up 0.2s ease-out'
+ 			'accordion-up': 'accordion-up 0.2s ease-out',
+			blink : 'blink 2s  infinite'
  		},
  		colors: {
  			background: 'hsl(var(--background))',
