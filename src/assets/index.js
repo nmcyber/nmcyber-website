@@ -9,6 +9,7 @@ export { default as logo } from "./images/NMCyber_logo.png";
 export { default as securityLogo } from "./images/security.png";
 export { default as cyberlogo } from './images/cyberlogo.webp';
 export { default as shield } from './images/shield.webp';
+export { default as worldMap } from './images/map.png';
 
 // SVG Illustrations
 export { default as loops } from "./svg/Looper.svg";

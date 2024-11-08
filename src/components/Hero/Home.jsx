@@ -1,5 +1,6 @@
 import About from "../About/About"
 import Counter from "../About/Counter"
+import WorldMap from "../About/WorldMap"
 import ContactUs from "../Contact/ContactUs"
 import Solutions from "../Solutions/Solutions"
 import WorldMap from "../Worldmap/Worldmap"
@@ -13,7 +14,7 @@ const Home = () => {
     <Counter />
     <About />
     <Solutions/>
-    <WorldMap />
+    <WorldMap/>
     <ContactUs/>
     </>
   )
