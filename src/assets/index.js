@@ -10,6 +10,7 @@ export { default as securityLogo } from "./images/security.png";
 export { default as cyberlogo } from './images/cyberlogo.webp';
 export { default as shield } from './images/shield.webp';
 export { default as worldMap } from './images/map.png';
+export { default as worldMapSvg } from './svg/full_world_map.svg';
 
 // SVG Illustrations
 export { default as loops } from "./svg/Looper.svg";

@@ -62,7 +62,8 @@ const Solutions = () => {
       ]}
     >
       <motion.div
-        className="relative container z-30 w-full px-4 sm:px-8 lg:px-16 xl:px-24 font-jakarta py-16 md:py-24"
+        className="relative container z-30 w-full ~px-16/4 lg:px-0 font-jakarta py-16 md:py-24"
+        // sm:px-8 lg:px-16 xl:px-24
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -75,24 +76,24 @@ const Solutions = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline outline-orange-600"
           variants={containerVariants}
         >
           {services.map((item, i) => (
             <motion.div
               key={i}
-              className="bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:cursor-pointer"
+              className="bg-white py-6 bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:cursor-pointer outline outline-fuchsia-600"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
-              <div className="p-6 flex flex-col items-center">
+              <div className="p-6 flex flex-col gap-4 items-center">
                 <motion.img
                   className="w-32 h-32 object-contain mb-6"
                   src={item.img}
                   alt={item.service}
                   whileHover={{ rotate: 5 }}
                 />
-                <h2 className="text-xl font-semibold text-n-2 mb-4 text-center">{item.service}</h2>
+                <h2 className="text-xl font-semibold text-n-2 mb-4 text-center line-clamp-none md:line-clamp-1 ">{item.service}</h2>
                 <Button
                   className="font-semibold px-6 py-2 text-lg rounded-full bg-gradient-to-r from-tertiary to-color-4 text-white hover:from-color-4 hover:to-tertiary transition-all duration-300"
                 >

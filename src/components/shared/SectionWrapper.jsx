@@ -2,12 +2,12 @@ import React from 'react';
 
 const SectionWrapper = ({ children, className = "", images = [] }) => {
   return (
-    <section className={`relative overflow-hidden ${className}`}>
+    <section className={`relative z-0 overflow-hidden ${className}`}>
       {children}
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute ${image.position} ${image.className}`}
+          className={`absolute ${image.position} ${image.className} `}
         >
           <img src={image.src} alt={image.alt} style={image.style} />
         </div>

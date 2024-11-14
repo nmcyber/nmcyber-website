@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import DottedMap from 'dotted-map';
 import { motion } from 'framer-motion';
 
-const WorldMap = () => {
+const WorldMapSVG = () => {
   const [svgMap, setSvgMap] = useState('');
   const [mapDimensions, setMapDimensions] = useState({ width: 0, height: 0 });
   const mapRef = useRef(null);
@@ -111,4 +111,4 @@ const WorldMap = () => {
   );
 };
 
-export default WorldMap;
+export default WorldMapSVG;
