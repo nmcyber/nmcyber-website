@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route exact path="/nmcyber-website" element={<Home/>}/>
+        <Route exact path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/solutions" element={<Solutions/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
