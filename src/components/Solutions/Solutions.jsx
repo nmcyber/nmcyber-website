@@ -76,13 +76,13 @@ const Solutions = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline outline-orange-600"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline-0 outline-orange-600"
           variants={containerVariants}
         >
           {services.map((item, i) => (
             <motion.div
               key={i}
-              className="bg-white py-6 bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:cursor-pointer outline outline-fuchsia-600"
+              className="bg-white py-6 bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:cursor-pointer outline-0 outline-fuchsia-600"
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
