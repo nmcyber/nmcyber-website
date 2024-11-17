@@ -52,6 +52,14 @@ module.exports = {
  					height: '0'
  				}
  			},
+			'rotate': {
+				from: {
+					transform: 'rotate(0deg)'
+				  },
+				  to: {
+					transform: 'rotate(360deg)'
+				  }
+			},
 			blink : {
 				'0%' : {
 					opacity : '0.5',

@@ -31,16 +31,16 @@ const Header = () => {
     <header
       className={` fixed top-0 left-0 z-50 backdrop-blur-[30px]  ${
         openNavigation ? "bg-secondary-foreground box-border" : ""
-      } w-full h-24 lg:bg-transparent`}
+      } w-full h-20 lg:bg-transparent outline outline-fuchsia-600`}
     >
-      <div className=" relative flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4">
-        <a className=" flex-shrink-0 ~w-40/48 xl:mr-8 " href="/">
+      <div className=" relative flex justify-between items-center px-5 lg:px-7 xl:px-9 max-lg:py-4 outline outline-blue-400 ">
+        <a className=" flex-shrink-0 xl:mr-8 outline-0 outline-lime-600" href="/">
           <img
-            className="w-full"
+            className="w-full ~wr-12/48 border-0 border-orange-600"
             src={logo}
             alt="logo"
             // height={220}
-            width={180}
+            // width={180}
           />
         </a>
         <nav
@@ -58,7 +58,7 @@ const Header = () => {
                 key={item.id}
                 href={item.url}
                 onClick={handleClick}
-                className={`block relative font-sans text-[19px] text-color-4 hover:text-white hover:underline hover:shadow-lg  transition-colors duration-300 ${
+                className={`block relative font-sans text-[19px] text-color-4 hover:text-white hover:underline hover:shadow-lg transition-colors duration-300 outline-0 outline-lime-600 ${
                   item.onlyMobile ? "lg:hidden" : ""
                 } px-8 py-10 lg:-mr-0.25  font-semibold ${
                   item.url === pathname.hash ? "z-2 " : "lg:text-color-2"
@@ -70,11 +70,10 @@ const Header = () => {
           </div>
           <Background />
         </nav>
-        <button className={`hidden lg:inline-block mb-14 lg:mr-10  `}>
+        {/* <button className={`hidden lg:inline-block mb-14 lg:mr-10  `}> </button> */}
           <a href="/contact">
-            <GradientButton children={"Contact Us"} />
+            <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 text-lg rounded-full overflow-hidden group" />
           </a>
-        </button>
 
         <button
           className={`lg:hidden z-2 size-10 text-color-4 rounded-md ${

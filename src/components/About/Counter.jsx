@@ -1,29 +1,27 @@
 import React from "react";
 import CountUp from "react-countup";
-import { motion, useSpring, useInView, useAnimationControls } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { countUp } from "../../Constants/index";
-import { securityLogo } from "@/assets";
+import { belmontAward, securityLogo } from "@/assets";
 
 const AnimatedNumber = ({ number }) => {
-  const controls = useAnimationControls();
-  const isInView = useInView({
-    once: true,
-    margin: "0px 0px -100px 0px"
-  });
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
 
-  const springValue = useSpring(0, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
-  React.useEffect(() => {
-    if (isInView) {
-      springValue.set(number);
-    }
-  }, [isInView, number, springValue]);
-
-  return <motion.span>{Math.round(springValue.get())}</motion.span>;
+  return (
+    <span ref={ref}>
+      {isInView ? (
+        <CountUp
+          start={0}
+          end={number}
+          duration={2.5}
+          separator=","
+        />
+      ) : (
+        "0"
+      )}
+    </span>
+  );
 };
 
 const Counter = () => {
@@ -68,7 +66,7 @@ const Counter = () => {
           className="flex-1 min-w-[300px] bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
         >
           <motion.img
-            src={securityLogo}
+            src={belmontAward}
             alt="Security Logo"
             className="w-40 h-auto"
             whileHover={{ scale: 1.05 }}

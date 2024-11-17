@@ -1,7 +1,7 @@
 import { binaries, cyberlogo, largeEllipse, smallEllipse } from "@/assets";
 import SectionWrapper from "../shared/SectionWrapper";
-import Accordian from "./Accordian";
 import Counter from "./Counter";
+import AccordionSection from "./Accordian";
 
 const About = () => {
   return (
@@ -34,7 +34,7 @@ const About = () => {
         </div> */}
         <div className=' flex'>
           <>
-            <Accordian />
+            <AccordionSection />
           </>
           <div className='flex justify-center items-center w-3/5 max-md:hidden'>
             <img src={cyberlogo} alt='cyberlogo' width={350} />

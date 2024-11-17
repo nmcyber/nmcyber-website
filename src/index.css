@@ -12,6 +12,7 @@
 * {
   scroll-behavior: smooth;
   /* outline: 3px solid orangered; */
+  /* outline: solid hsl(197, 50%, 20%); */
 }
 
 :root {
@@ -32,6 +33,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .overlayBg {
+    /* background: rgba(0, 0, 0, 0.658); */
+    backdrop-filter: blur(100px);
+    /* opacity: 50%; */
+  }
+  /* .overlayBg::before {
+    background-color: rgba(0,21,48,0.51);
+  } */
+  /* .overlayBg::after {
+    backdrop-filter: blur(10px);
+  } */
 }
 
 @keyframes slide {
@@ -61,8 +73,8 @@
     --tertiary: 197.9 73.88% 51.96%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 197.9 73.88% 51.96%;
+    --accent-foreground: 240 4.8% 95.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;

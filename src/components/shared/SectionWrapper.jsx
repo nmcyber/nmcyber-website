@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SectionWrapper = ({ children, className = "", images = [] }) => {
   return (
     <section className={`relative z-0 overflow-hidden ${className}`}>

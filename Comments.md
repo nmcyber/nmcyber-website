@@ -31,3 +31,14 @@ We can manage DNS Records from Cloudflare so that we have that added layer of se
 To Login to Cloudlfare Dashboard using the nmcybersolutions gmail address
 Web Design & Dev Weekly Sync
 
+======================================================================================================
+
+Add content for secondary and tertiay pages
+
+Fix the Contact form by linking it to info@nmcyber.com
+
+Track user Metrics & Analytics
+
+Add / Obtain Testimonials from previous clients
+
+Differentiatet Clients from Partners 

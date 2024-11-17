@@ -30,19 +30,19 @@ export const navigation = [
 
 export const countUp =[
   {
-    id:"1",
-    num:"30",
-    title:"Businesses Owners Trained"
+    id: "1",
+    num: "30",
+    title: "Empowered Businesses"
   },
   {
-    id:"2",
-    num:"200",
-    title:"Individuals Trainied"
+    id: "2",
+    num: "200",
+    title: "Skilled Individuals"
   },
   {
-    id:"3",
-    num:"10",
-    title:"Courses Delivered"
+    id: "3",
+    num: "10",
+    title: "Transformative Courses"
   }
 ];
 

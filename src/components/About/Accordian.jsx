@@ -53,11 +53,11 @@ const Accordion = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div className="py-4" variants={itemVariants}>
+      <motion.div id='about' className="py-4" variants={itemVariants}>
         <h2 className="flex justify-between items-center w-full text-left text-sm font-medium text-tertiary">
           &ndash;WHY NMCYBER
         </h2>
-        <div className="mt-4">
+        <div  className="mt-4">
           <h1 className=" text-wrap capitalize font-bold text-4xl sm:text-5xl md:text-6xl">
             <span className=" text-gradient-clip text-white ">discover&#46; </span>
             <span className=" text-gradient-clip text-white ">transform&#46; </span>
