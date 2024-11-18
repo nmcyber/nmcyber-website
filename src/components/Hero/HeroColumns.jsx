@@ -17,13 +17,13 @@ export const RightColumn = () => {
 
   return (
     <div className="relative flex flex-row justify-center items-center w-full md:w-5/12 mt-8 md:mt-0">
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      <div className="absolute z-[-50] inset-0 flex items-center justify-center overflow-hidden">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           viewBox="0 0 800 800"
           fill="currentColor"
-          className="w-full h-full text-tertiary opacity-60"
+          className="w-full h-full text-tertiary opacity-30"
           variants={rotationVariants}
           animate="animate"
         >
@@ -45,6 +45,7 @@ export const RightColumn = () => {
           })}
         </motion.svg>
       </div>
+      
       {/* <img className="relative z-10 md:w-[85%] lg:w-[75%] h-auto" src={poster} alt="poster" width={850} /> */}
     </div>
   );

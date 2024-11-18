@@ -1,4 +1,6 @@
+import { ImCheckmark, ImLoop, ImWarning } from 'react-icons/im';
 import { clock, facebook, graduationHat, instagram, linkedin, lock_n_key, pc, youtube } from "@/assets";
+import { FaBook, FaGraduationCap, FaMagnifyingGlass, FaPen, FaQuestion, FaShield } from 'react-icons/fa6';
 
 export const navigation = [
   {
@@ -142,5 +144,56 @@ export const contactInfo = [
   },
 ]
 
+// NAVIGATION SUB-MENU ITEMS - FROM THE GOOGLE DRIVE WORD DOCUMENT BY DR.NICKSON
 
+export const subMenuItemsOne = [
+  {
+    title: 'Cybersecurity Awareness',
+    description: 'Training, phishing, culture development',
+    icon: FaShield,
+  },
+  {
+    title: 'Cybersecurity Readiness',
+    description: 'Incident response, assessments, business continuity',
+    icon: ImCheckmark,
+  },
+  {
+    title: 'Candidate Screening',
+    description: 'Pre-employment, technical, behavioral screening',
+    icon: FaMagnifyingGlass,
+  },
+  {
+    title: 'Content Creation',
+    description: 'Training videos, infographics, newsletters',
+    icon: FaPen,
+  },
+  {
+    title: 'Risk Assessments',
+    description: 'Employee, culture, industry-specific',
+    icon: ImWarning,
+  },
+  {
+    title: 'Industry Training',
+    description: 'Compliance, sector-specific, custom',
+    icon: FaGraduationCap,
+  }
+];
+
+export const subMenuItemsTwo = [
+  {
+    title: 'On-Demand Courses',
+    description: 'Self-paced, modular, mobile-friendly',
+    icon: FaBook,
+  },
+  {
+    title: 'Continuous Learning',
+    description: 'Microlearning, ongoing programs',
+    icon: ImLoop,
+  },
+  {
+    title: 'Help Center',
+    description: 'FAQs, solutions, troubleshooting',
+    icon: FaQuestion,
+  }
+];
 
