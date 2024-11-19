@@ -1,6 +1,4 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { poster } from '@/assets';
 import { GradientButton } from '../shared/GradientButton';
 
 export const RightColumn = () => {
@@ -46,7 +44,6 @@ export const RightColumn = () => {
         </motion.svg>
       </div>
       
-      {/* <img className="relative z-10 md:w-[85%] lg:w-[75%] h-auto" src={poster} alt="poster" width={850} /> */}
     </div>
   );
 };

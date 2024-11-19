@@ -9,38 +9,7 @@ import ContactForm from './ContactForm';
 
 
 const ContactFormModal = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    setIsSubmitted(true);
-  };
-
-  const formContent = (
-    <motion.form
-      onSubmit={handleSubmit}
-      className="space-y-6"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300">Name</label>
-        <Input id="name" name="name" type="text" required className="mt-1" />
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300">Email</label>
-        <Input id="email" name="email" type="email" required className="mt-1" />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300">Message</label>
-        <Textarea id="message" name="message" required className="mt-1" />
-      </div>
-      <Button type="submit" className="w-full bg-tertiary hover:bg-tertiary/90">Send Message</Button>
-    </motion.form>
-  );
 
   const thankYouMessage = (
     <motion.div

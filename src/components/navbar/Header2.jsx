@@ -144,7 +144,7 @@ const Navbar1 = () => {
             {/* ---------- CTA BUTTON ------ */}
             <a href="/contact">
           </a>
-            {/* <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 rounded-2xl overflow-hidden group" /> */}
+            <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 rounded-2xl overflow-hidden group" />
           </div>
         </nav>
 
