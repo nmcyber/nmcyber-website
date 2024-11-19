@@ -1,9 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { copyright, logo } from "@/assets";
-import { FaArrowRight } from "react-icons/fa";
-import { contactInfo, navigation, socialMedia } from "@/Constants";
-import SectionWrapper from "../shared/SectionWrapper";
+import { FaDiscord, FaReddit, FaTwitter, FaTelegram, FaLinkedin } from "react-icons/fa";
+import { Input } from "@/components/ui/input";
+import Logo from "../shared/Logo";
 
 const Footer = () => {
   const containerVariants = {
@@ -30,102 +28,86 @@ const Footer = () => {
     },
   };
 
+  const footerLinks = [
+    {
+      title: "Services",
+      items: [
+        { name: "Cybersecurity Awareness" },
+        { name: "Cybersecurity Readiness" },
+        { name: "Candidate Screening" },
+        { name: "Content Creation" },
+        { name: "Risk Assessments" },
+        { name: "Industry Training" },
+      ],
+    },
+    {
+      title: "Resources",
+      items: [
+        { name: "On-Demand Courses" },
+        { name: "Continuous Learning" },
+        { name: "Help Center" },
+      ],
+    },
+  ];
+
   return (
-    <SectionWrapper>
-      <footer className="relative z-30 container mt-2 lg:mt-6 px-4 sm:px-6 lg:px-8">
+    <footer className="relative ~pt-8/24 ~pb-2/6">
+      <div className=" relative container z-30 mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap -mx-4"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
-          <motion.div variants={itemVariants} className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
-            <div className="flex items-center mb-4">
-              <img src={logo} alt="logo" className=" w-[180px]" />
-              <div>
-                <h2 className="text-2xl font-bold">
-                  NM<span className="text-tertiary">CYBER</span>
-                </h2>
-                <p className="text-sm">Empowering You To Thrive</p>
-              </div>
+          <motion.div variants={itemVariants} className="col-span-1 lg:col-span-1">
+            <Logo />
+            <p className="text-zinc-400 mb-6">Empowering You To Thrive in the Digital World</p>
+            <div className="flex space-x-4 mb-8">
+              <a href="#" className="text-zinc-400 hover:text-tertiary"><FaDiscord size={24} /></a>
+              <a href="#" className="text-zinc-400 hover:text-tertiary"><FaReddit size={24} /></a>
+              <a href="#" className="text-zinc-400 hover:text-tertiary"><FaTwitter size={24} /></a>
+              <a href="#" className="text-zinc-400 hover:text-tertiary"><FaTelegram size={24} /></a>
+              <a href="#" className="text-zinc-400 hover:text-tertiary"><FaLinkedin size={24} /></a>
             </div>
-            <form className="mb-4">
-              <div className="flex">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Subscribe to Newsletter"
-                  className="w-full p-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-tertiary"
-                  aria-label="Email for newsletter"
-                />
-                <button
-                  type="submit"
-                  className="p-3 bg-tertiary rounded-r-full hover:bg-opacity-90 transition-colors duration-300"
-                  aria-label="Subscribe"
-                >
-                  <FaArrowRight className="text-white w-5 h-5" />
-                </button>
-              </div>
+          </motion.div>
+
+          {footerLinks.map((section, index) => (
+            <motion.div key={index} variants={itemVariants} className="col-span-1">
+              <h3 className="text-xl font-bold text-white mb-4">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex} className="flex items-center text-zinc-400 hover:text-tertiary">
+                    <a href="#">{item.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+
+          <motion.div variants={itemVariants} className="col-span-1">
+            <h3 className="text-xl font-bold text-white mb-4">Stay Updated</h3>
+            <p className="text-zinc-400 mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
+            <form className="flex relative overflow-hidden flex-col space-y-2">
+              <Input type="email" placeholder="Your email" className="bg-white/10 bg-opacity-20 backdrop-filter backdrop-blur-lg border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-[#64cdf6] focus:ring-color-4" />
+              <button type="submit" className="bg-tertiary ~py-2/3 rounded-md text-white hover:bg-tertiary/90 bg-gradient-to-l from-[#64cdf6]/20 to-transparent via-[#64cdf6]/5 opacity-80 group-hover:opacity-100 transition-opacity duration-300">Subscribe</button>
             </form>
-            <div className="flex space-x-4">
-              {socialMedia.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-white rounded-full hover:bg-tertiary transition-colors duration-300"
-                  aria-label={`Visit our ${item.name} page`}
-                >
-                  <img src={item.img} alt={item.name} className="w-6 h-6" />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
-            <h3 className="text-xl font-semibold text-tertiary mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {navigation.map((item, index) => (
-                <li key={index}>
-                  <a
-                    href={item.url}
-                    className="text-lg hover:text-tertiary transition-colors duration-300"
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="w-full lg:w-1/3 px-4">
-            <h3 className="text-xl font-semibold text-tertiary mb-4">Contact Info</h3>
-            <ul className="space-y-2">
-              {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-center">
-                  <img src={item.icon} alt="" className="w-5 h-5 mr-2" />
-                  <span className="text-lg">{item.desc}</span>
-                </li>
-              ))}
-            </ul>
           </motion.div>
         </motion.div>
-
-        <motion.hr
-          variants={itemVariants}
-          className="my-8 border-tertiary"
-        />
 
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center text-sm"
+          className="mt-10 ~pt-2/4 border-t text-sm border-zinc-800 flex flex-col md:flex-row justify-between items-center text-zinc-400"
         >
-          <img src={copyright} alt="copyright" className="w-4 h-4 mr-2" />
-          <p>2024 NMCyber. All Rights Reserved</p>
+          <p>© 2024 NMCyber. All rights reserved.</p>
+          <div className="mt-4 md:mt-0 space-x-4">
+            <a href="#" className="hover:text-tertiary">Privacy Policy</a>
+            <a href="#" className="hover:text-tertiary">Terms of Service</a>
+          </div>
         </motion.div>
-      </footer>
-    </SectionWrapper>
+      </div>
+      <div className="absolute z-20 inset-0 bg-[rgba(0,21,48,0.51)] "></div>
+      <div className="absolute z-10 inset-0 backdrop-blur-[80.5px] "></div>
+    </footer>
   );
 };
 

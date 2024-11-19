@@ -61,9 +61,10 @@ const Counter = () => {
         variants={containerVariants}
         className="flex flex-wrap gap-8 relative z-30"
       >
+      {/* award winning */}
         <motion.div
           variants={itemVariants}
-          className="flex-1 min-w-[300px] bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
+          className=" mmin-w-[200px] min-w-1/2 bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
         >
           <motion.img
             src={belmontAward}
@@ -79,7 +80,7 @@ const Counter = () => {
             Award Winning
           </motion.h2>
         </motion.div>
-
+      {/* COUNTER  */}
         <motion.div
           variants={itemVariants}
           className="flex-1 min-w-[300px]"
@@ -90,19 +91,21 @@ const Counter = () => {
                 key={i}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-4 rounded-lg hover:bg-[rgba(0,21,48,0.3)] transition-colors duration-300"
+                // hover:bg-[rgba(0,21,48,0.3)]
+                className="text-center p-4 rounded-lg transition-colors duration-300"
               >
-                <h3 className="text-4xl sm:text-5xl text-tertiary font-bold mb-2 flex justify-center items-center">
+                <h3 className="text-4xl sm:text-5xl text-tertiary cursor-pointer font-bold mb-2 flex justify-center items-center">
                   <AnimatedNumber number={item.num} />
                   <span className="ml-1">+</span>
                 </h3>
-                <p className="text-lg sm:text-xl text-white font-semibold">
+                <p className="text-lg sm:text-xl cursor-pointer text-white font-semibold">
                   {item.title}
                 </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
       </motion.div>
 
       {/* Background layers */}

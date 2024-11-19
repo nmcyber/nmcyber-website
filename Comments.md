@@ -42,3 +42,5 @@ Track user Metrics & Analytics
 Add / Obtain Testimonials from previous clients
 
 Differentiatet Clients from Partners 
+
+>> Link to the belmont page

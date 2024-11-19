@@ -1,6 +1,3 @@
-import { ImCheckmark, ImLoop, ImWarning } from 'react-icons/im';
-import { FaBook, FaGraduationCap, FaMagnifyingGlass, FaPen, FaQuestion, FaShield } from 'react-icons/fa6';
-
 import {
   Accordion,
   AccordionContent,
@@ -30,6 +27,7 @@ import { logo, socialIcons, socials } from '@/assets';
 import { GradientButton } from '../shared/GradientButton';
 import { MenuIcon } from 'lucide-react';
 import { subMenuItemsOne, subMenuItemsTwo } from '@/Constants';
+import Logo from '../shared/Logo';
 
 
 
@@ -39,16 +37,10 @@ const Navbar1 = () => {
       <div className=' px-4 sm:px-8 lg:px-16 xl:px-24 '>
         <nav className="hidden justify-between lg:flex outline-0 outline-blue-400">
           <div className="flex flex-grow justify-between items-center gap-6 outline-0 outline-red-400">
-            <div className="flex  ~text-sm/2xl items-center gap-2 outline-0 outline-yellow-400">
-              <img
-                src={logo}
-                className=" ~w-8/10"
-                alt="logo"
-              />
-              <p>
-              NM<span className="bg-clip-text text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
-              </p>
-            </div>
+                  {/* LOGO COMPONENT */}
+            <>
+             <Logo />
+            </>
             <div className="flex items-center mx-auto ~space-x-2/6 font-poppins ~text-md/3xl  outline-0 outline-purple-400">
               <a
                 className={cn(
@@ -169,16 +161,7 @@ const Navbar1 = () => {
 
         <div className="block lg:hidden outline-0 outline-lime-400">
           <div className="flex items-center justify-between">
-            <div className="flex items-center text-white text-xl font-semibold gap-2">
-              <img
-                src={logo}
-                className="~w-8/10"
-                alt="logo"
-              />
-              <p>
-              NM<span className="bg-clip-text text-transparent font-normal bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
-              </p>
-            </div>
+           <Logo />
             <Sheet className=' '>
               <SheetTrigger asChild>
                 <Button variant={'outline'} size={'icon'}>
@@ -189,17 +172,7 @@ const Navbar1 = () => {
                 <SheetHeader>
                   <SheetTitle>
 
-            <div className="flex items-center text-white text-xl font-semibold gap-2">
-              <img
-                src={logo}
-                className=" ~w-8/10"
-                alt="logo"
-              />
-              
-              <p>
-              NM<span className="bg-clip-text text-transparent font-normal bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
-              </p>
-            </div>
+            <Logo />
                   </SheetTitle>
                 </SheetHeader>
                 {/* --------------------------- MIDDLE MOBILE MENU SECTION --------------------------- */}
@@ -270,8 +243,7 @@ const Navbar1 = () => {
                 </a>
                 </div>
                 {/* --------------------------- LOWER MOBILE MENU SECTION --------------------------- */}
-                <div className="border-t pt-4">
-                  <div className="grid grid-cols-2 justify-start">
+                  {/* <div className="grid grid-cols-2 justify-start">
                     <a
                       className={cn(
                         buttonVariants({
@@ -338,15 +310,16 @@ const Navbar1 = () => {
                     >
                       Cookie Settings
                     </a>
-                  </div>
+                  </div> */}
                   {/* <div className="mt-2 flex flex-col gap-3">
                     <Button variant={'outline'}>Log in</Button>
                     <Button>Sign up</Button>
                   </div> */}
-                </div>
+                {/* <div className="border-t pt-4">
+                </div> */}
                     {/* -------------------- MOBILE MENU SHEET FOOTER ---------------- */}
                     <SheetFooter>
-                    <div className="mb-8 flex justify-center space-x-6 md:order-last md:mb-0">
+                    <div className="mb-8 flex justify-start space-x-6 md:order-last md:mb-0">
                     {socials.map(({ link, ariaLabel, iconImage: Icon }, index) => (
                         <a href={link} key={index} className="text-gray-400 hover:text-gray-500">
                         <span class="sr-only">{ariaLabel}</span>
