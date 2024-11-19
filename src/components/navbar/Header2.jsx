@@ -1,37 +1,28 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Button, buttonVariants } from '@/components/ui/button';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { useState } from 'react';
+import { MenuIcon } from 'lucide-react';
+
 import { cn } from '@/lib/utils';
 import { logo, socialIcons, socials } from '@/assets';
-import { GradientButton } from '../shared/GradientButton';
-import { MenuIcon } from 'lucide-react';
 import { subMenuItemsOne, subMenuItemsTwo } from '@/Constants';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
+
 import Logo from '../shared/Logo';
-
-
+import { GradientButton } from '../shared/GradientButton';
+import ContactFormModal from '../Contact/ContactFormModal';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const Navbar1 = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
+
+  const openContactModal = (e) => {
+    e.preventDefault();
+    setIsContactModalOpen(true);
+  };
   return (
     <section className=" w-full py-4 fixed top-0 left-0 z-50 backdrop-blur-[30px] outline-0 outline-fuchsia-600">
       <div className=' px-4 sm:px-8 lg:px-16 xl:px-24 '>
@@ -152,8 +143,8 @@ const Navbar1 = () => {
             <Button>Sign up</Button> */}
             {/* ---------- CTA BUTTON ------ */}
             <a href="/contact">
-            <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 rounded-2xl overflow-hidden group" />
           </a>
+            {/* <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 rounded-2xl overflow-hidden group" /> */}
           </div>
         </nav>
 
@@ -238,9 +229,12 @@ const Navbar1 = () => {
                     Platform
                   </a>
                   {/* ------------------- MOBILE CONTACT US BUTTON ------------------- */}
-                <a href="#contact">
+                {/* <a href="#contact" onClick={openContactModal}>
                     <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 ~text-sm/lg rounded-full overflow-hidden group" />
-                </a>
+                </a> */}
+                {isMobile && (
+            <ContactFormModal onClose={() => setIsContactModalOpen(false)} /> )}
+                {/* { (isMobile) && <ContactFormModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} /> }  */}
                 </div>
                 {/* --------------------------- LOWER MOBILE MENU SECTION --------------------------- */}
                   {/* <div className="grid grid-cols-2 justify-start">
@@ -340,6 +334,7 @@ const Navbar1 = () => {
           </div>
         </div>
       </div>
+       
     </section>
   );
 };

@@ -4,6 +4,7 @@ import { circuit, largeEllipse, loops, smallEllipse, spiralLoop } from "@/assets
 import { services } from "../../Constants";
 import { Button } from "../ui/button";
 import SectionWrapper from "../shared/SectionWrapper";
+import { GradientButton } from "../shared/GradientButton";
 
 const FeatureCard = ({ item, index }) => {
   const cardRef = useRef();
@@ -44,11 +45,12 @@ const FeatureCard = ({ item, index }) => {
           whileHover={{ rotate: 5 }}
         />
         <h3 className="text-xl font-semibold mb-4 text-white">{item.service}</h3>
-        <Button
+        {/* <Button
           className="font-semibold px-6 py-2 text-lg rounded-full bg-gradient-to-r from-tertiary to-color-4 text-white hover:from-color-4 hover:to-tertiary transition-all duration-300"
         >
           See More
-        </Button>
+        </Button> */}
+        <GradientButton children={"see more"} className="relative font-semibold px-6 py-2 ~text-sm/lg rounded-full overflow-hiddenn " />
       </div>
     </motion.div>
   );
