@@ -23,6 +23,7 @@ const Navbar1 = () => {
     e.preventDefault();
     setIsContactModalOpen(true);
   };
+
   return (
     <section className=" w-full py-4 fixed top-0 left-0 z-50 backdrop-blur-[30px] outline-0 outline-fuchsia-600">
       <div className=' px-4 sm:px-8 lg:px-16 xl:px-24 '>
@@ -162,7 +163,6 @@ const Navbar1 = () => {
               <SheetContent className="overflow-y-auto border-none backdrop-blur-sm bg-[rgba(0,21,48,0.41)] outline-0 outline-orange-400">
                 <SheetHeader>
                   <SheetTitle>
-
             <Logo />
                   </SheetTitle>
                 </SheetHeader>
@@ -232,9 +232,7 @@ const Navbar1 = () => {
                 {/* <a href="#contact" onClick={openContactModal}>
                     <GradientButton children={"Contact Us"} className="relative font-semibold px-6 py-2 ~text-sm/lg rounded-full overflow-hidden group" />
                 </a> */}
-                {isMobile && (
-            <ContactFormModal onClose={() => setIsContactModalOpen(false)} /> )}
-                {/* { (isMobile) && <ContactFormModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} /> }  */}
+                { isMobile && ( <ContactFormModal onClose={() => setIsContactModalOpen(false)} /> )}
                 </div>
                 {/* --------------------------- LOWER MOBILE MENU SECTION --------------------------- */}
                   {/* <div className="grid grid-cols-2 justify-start">

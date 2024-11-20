@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import ContactForm from './ContactForm';
@@ -11,20 +8,20 @@ import ContactForm from './ContactForm';
 const ContactFormModal = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const thankYouMessage = (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="text-center"
-    >
-      <h3 className="text-2xl font-semibold mb-4">Thank You!</h3>
-      <p>Your message has been sent. We'll get back to you soon.</p>
-    </motion.div>
-  );
+  // const thankYouMessage = (
+  //   <motion.div
+  //     initial={{ opacity: 0 }}
+  //     animate={{ opacity: 1 }}
+  //     transition={{ duration: 0.5 }}
+  //     className="text-center"
+  //   >
+  //     <h3 className="text-2xl font-semibold mb-4">Thank You!</h3>
+  //     <p>Your message has been sent. We'll get back to you soon.</p>
+  //   </motion.div>
+  // );
 
   // const content = isSubmitted ? thankYouMessage : formContent;
-  const content = isSubmitted ? thankYouMessage : <ContactForm />;
+  const content = <ContactForm />;
 
   if (isMobile) {
     return (
