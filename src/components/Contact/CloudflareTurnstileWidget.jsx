@@ -6,7 +6,7 @@ export default function TurnstileWidget({ onVerify, disabled = false }) {
   const [siteKey, setSiteKey] = useState('');
 
   useEffect(() => {
-    const isDevelopment = import.meta.env.VITE_REACT_APP_DEVELOPMENT;
+    const isDevelopment = import.meta.env.VITE_REACT_APP_DEVELOPMENT === 'true';
     const cloudflareSiteKey = isDevelopment 
       ? import.meta.env.VITE_REACT_APP_DEV_CLOUDFLARE_TURNSTILE_SITEKEY : import.meta.env.VITE_REACT_APP_CLOUDFLARE_TURNSTILE_SITEKEY;
     
@@ -26,7 +26,7 @@ export default function TurnstileWidget({ onVerify, disabled = false }) {
     return <p className="text-red-500">Turnstile configuration error: Missing site key.</p>;
   }
 
-  // console.log(siteKey);
+  console.log(siteKey);
 
   return (
     <div className="my-4">
