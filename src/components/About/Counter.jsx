@@ -3,6 +3,8 @@ import CountUp from "react-countup";
 import { motion, useInView } from "framer-motion";
 import { countUp } from "../../Constants/index";
 import { belmontAward, securityLogo } from "@/assets";
+import { Badge } from "../ui/badge";
+import SectionWrapper from "../shared/SectionWrapper";
 
 const AnimatedNumber = ({ number }) => {
   const ref = React.useRef(null);
@@ -53,18 +55,18 @@ const Counter = () => {
   };
 
   return (
-    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 overflow-hidden">
+    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hiddenn ">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-wrap gap-8 relative z-30"
+        className="flex flex-col sm:flex-row flex-wrap gap-8 bg-transparent relative z-40"
       >
       {/* award winning */}
         <motion.div
           variants={itemVariants}
-          className=" mmin-w-[200px] min-w-1/2 bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
+          className=" relative min-w-1/2 bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
         >
           <motion.img
             src={belmontAward}
@@ -73,12 +75,16 @@ const Counter = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           />
-          <motion.h2
+          <Badge className=" absolute inset-0- text-sm ssm:text-3xl font-normal text-white text-center sm:text-left"
+            variants={itemVariants} >
+          Award Winning
+          </Badge>
+          {/* <motion.h2
             className="text-2xl sm:text-3xl font-bold text-white text-center sm:text-left"
             variants={itemVariants}
           >
             Award Winning
-          </motion.h2>
+          </motion.h2> */}
         </motion.div>
       {/* COUNTER  */}
         <motion.div
@@ -119,7 +125,7 @@ const Counter = () => {
         initial={{ backdropFilter: "blur(0px)" }}
         animate={{ backdropFilter: "blur(80.5px)" }}
         transition={{ duration: 1.2 }}
-        className="absolute z-10 inset-0"
+        className="absolute z-30 inset-0"
       />
     </section>
   );

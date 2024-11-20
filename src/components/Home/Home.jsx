@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Counter />
+      {/* <Counter /> */}
       <About />
       <Solutions />
       <WorldMap />

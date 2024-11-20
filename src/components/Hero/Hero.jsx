@@ -8,6 +8,7 @@ import TrustedPartners, { Logos3 } from './TrustedPartners';
 const Hero = () => {
   return (
     <SectionWrapper
+    className='overflow-hidden'
       images={[
         {
           src: circuit,
@@ -35,7 +36,7 @@ const Hero = () => {
         },
       ]}
     >
-      <section className="relative grid w-full bg-color-1 2xl:min-h-[100dvh] ~pt-4/32 max-lg:pt-36  border-0 border-fuchsia-500">
+      <section className="relative grid w-full bg-color-1 2xl:min-h-[100dvh] ~pt-4/32 max-lg:pt-36 overflow-hidden border-0 border-fuchsia-500">
         <div className=" relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 outline-0 outline-lime-400">
           <div className=" flex flex-col sm:flex-col md:flex-row gap-x-5 h-full relative z-40 mx-auto border-0 border-lime-400 ">
             <LeftColumn />

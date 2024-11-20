@@ -80,6 +80,7 @@ export default function ContactUs() {
 
   return (
     <SectionWrapper
+    className='overflow-hidden'
       images={[
         {
           src: circuit,

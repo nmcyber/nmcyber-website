@@ -25,7 +25,7 @@ const Navbar1 = () => {
   };
 
   return (
-    <section className=" w-full py-4 fixed top-0 left-0 z-50 backdrop-blur-[30px] outline-0 outline-fuchsia-600">
+    <section className=" w-full py-4 fixed top-0 left-0 z-50 backdrop-blur-[30px]  outline-0 outline-fuchsia-600">
       <div className=' px-4 sm:px-8 lg:px-16 xl:px-24 '>
         <nav className="hidden justify-between lg:flex outline-0 outline-blue-400">
           <div className="flex flex-grow justify-between items-center gap-6 outline-0 outline-red-400">
