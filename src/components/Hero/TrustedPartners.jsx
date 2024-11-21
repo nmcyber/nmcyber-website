@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { huntressLogo, proofpointLogo, sophosLogo } from '@/assets';
 
 const partners = [
   { name: 'Huntress', logo: huntressLogo },
