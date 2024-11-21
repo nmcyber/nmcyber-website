@@ -5,11 +5,12 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Solutions from "./components/Solutions/Solutions";
 import Footer from "./components/Footer/Footer";
-import ContactUs from "./components/Contact/ContactUs";
-import "./index.css";
-import NotFound from "./pages/NotFound";
+import { logPageView } from './analytics';
 import Sitemap from "./pages/Sitemap";
+import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ContactUs from "./components/Contact/ContactUs";
+
 // import SmoothScrolling from "./utils/smoothscrolling";
 
 function App() {

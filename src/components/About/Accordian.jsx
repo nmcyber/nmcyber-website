@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { accordion } from "@/Constants";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus } from 'lucide-react';
+import { Button } from "../ui/button";
 
 const Accordion = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -40,7 +41,7 @@ const Accordion = () => {
       opacity: 1, 
       height: "auto",
       transition: { 
-        duration: 0.3,
+        duration: 0.5,
         ease: [0.04, 0.62, 0.23, 0.98]
       }
     }
@@ -57,11 +58,11 @@ const Accordion = () => {
         <h2 className="flex justify-between items-center w-full text-left text-sm font-medium text-tertiary">
           &ndash;WHY NMCYBER
         </h2>
-        <div  className="mt-4">
-          <h1 className=" text-wrap capitalize font-bold text-4xl sm:text-5xl md:text-6xl">
-            <span className=" text-gradient-clip text-white ">discover&#46; </span>
-            <span className=" text-gradient-clip text-white ">transform&#46; </span>
-            <span className=" text-gradient-clip text-white ">thrive&#46;</span>
+        <div className="mt-4">
+          <h1 className="text-wrap capitalize font-bold text-4xl sm:text-5xl md:text-6xl">
+            <span className="text-gradient-clip text-white">discover&#46; </span>
+            <span className="text-gradient-clip text-white">transform&#46; </span>
+            <span className="text-gradient-clip text-white">thrive&#46;</span>
           </h1>
           <p className="mt-6 font-poppins text-lg">
             Our innovative approach to cybersecurity awareness and training
@@ -73,9 +74,11 @@ const Accordion = () => {
 
       {accordion.map((pillar, index) => (
         <motion.div key={index} className="py-4 border-b border-slate-100/10 last:border-b-0" variants={itemVariants}>
-          <button
+          <Button
             onClick={() => toggleSection(index + 1)}
-            className="flex justify-between items-center w-fulll text-left text-xl font-medium text-tertiary capitalize transition-colors duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tertiary"
+            className="flex justify-betweenn items-center bg-transparent hover:bg-transparent shadow-none outline-none border-none text-left text-xl font-medium text-tertiary capitalize transition-colors duration-300 hover:text-white focus:outline-none focus:ring-1 focus:ring-offset-transparent focus:ring-offset-1 focus:ring-tertiary/20"
+            aria-expanded={openSection === index + 1}
+            aria-controls={`content-${index}`}
           >
             <motion.span
               initial={false}
@@ -87,16 +90,17 @@ const Accordion = () => {
             <span className="flex items-center gap-x-2">
               {pillar.title}&#46;
             </span>
-          </button>
+          </Button>
           <AnimatePresence initial={false}>
             {openSection === index + 1 && (
               <motion.div
                 key={`content-${index}`}
+                id={`content-${index}`}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
                 variants={contentVariants}
-                className="mt-4 space-y-2 text-gray-300"
+                className="mt-4 space-y-2 text-gray-300 overflow-hidden"
               >
                 {pillar.content.map((paragraph, pIndex) => (
                   <motion.p
