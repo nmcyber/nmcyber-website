@@ -28,10 +28,12 @@ const WordsAnimation = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="flex flex-col items-center justify-center h-full">
-      <h2 className="text-5xl font-bold text-white mb-4">Discover</h2>
-      <h2 className="text-5xl font-bold text-white mb-4">Transform</h2>
-      <h2 className="text-5xl font-bold text-white mb-4">Thrive</h2>
+    <div ref={containerRef} className=" absolute inset-0 z-10 flex flex-col gap-y-2 items-center justify-center h-full capitalize font-bold text-4xl sm:text-5xl md:text-6xl ">
+            <span className="text-gradient-clip text-[#64cdf6]">discover&#46; </span>
+            <span className="text-gradient-clip text-[#64cdf6]">transform&#46; </span>
+            <span className="text-gradient-clip text-[#64cdf6]">thrive&#46;</span>
+        {/* <h1 className="text-wrap capitalize font-bold text-4xl sm:text-5xl md:text-6xl">
+          </h1> */}
     </div>
   );
 };
