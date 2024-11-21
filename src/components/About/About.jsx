@@ -13,6 +13,7 @@ const About = () => {
     <>
     <Counter />
     <SectionWrapper
+    className=" overflow-hidden"
       images={[
         {
           src: binaries,
