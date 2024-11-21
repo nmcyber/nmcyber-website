@@ -32,7 +32,7 @@ const BinaryColumn = ({ position, speed, depth }) => {
           letterSpacing={0.02}
           opacity={10}
           textAlign="center"
-          // font="https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOV.woff"
+          font="https://fonts.gstatic.com/s/jetbrainsmono/v13/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOV.woff2"
           anchorY="top"
           anchorX="center"
           position={[0, i - 10 + Math.random() * 20, 0]}
