@@ -28,12 +28,12 @@ export default function ContactUs() {
     >
       <div className="relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24 font-jakarta h-max py-16 md:py-24">
         <div className="relative w-full md:w-1/2 mx-auto flex justify-end">
-          <img src={shield} alt="Shield" className="absolute z-40 top-[-5%] aspect-auto hidden md:flex left-0 h-[25%] md:w-auto md:left-[10%] md:h-[25%]" />
-          <div className="w-full md:w-5/6 p-8 m-2 rounded-3xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 shadow-xl">
+          <img src={shield} alt="Shield" className="absolute z-40 top-[-5%] aspect-auto hidden md:flex -left-[0%] h-[25%] md:w-auto md:left-[10%] md:h-[25%]" />
+          <div className="w-full md:w-5/6 p-8 m-2 rounded-3xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg outline outline-1 outline-tertiary/30 border-opacity-20 shadow-xl">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 text-center">
               Contact Us
             </h2>
-            <div className="w-20 h-1 bg-color-4 mx-auto mb-8"></div>
+            {/* <div className="w-20 h-1 bg-color-4 mx-auto mb-8"></div> */}
 
           <ContactForm />            
 

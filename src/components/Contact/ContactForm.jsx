@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 import { useToast } from "@/hooks/use-toast";
 import TurnstileWidget from "./CloudflareTurnstileWidget";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+import { ToastAction } from "../ui/toast";
 
 const industries = [
   "Technology",
@@ -23,6 +27,7 @@ export default function ContactForm() {
     industry: "",
     message: "",
     user_os: "",
+    recipient: "",
     user_platform: "",
     user_browser: "",
     user_version: "",
@@ -37,9 +42,7 @@ export default function ContactForm() {
   useEffect(() => {
     setFormData(prevData => ({
       ...prevData,
-      to_email: formData.email,
       recipient: formData.email,
-      confirmation_link: "https://nmcyber.com.au/confirm?email=" + encodeURIComponent(formData.email),
       user_os: window.navigator.platform,
       user_platform: window.navigator.userAgent,
       user_browser: window.navigator.appName,
@@ -85,11 +88,12 @@ export default function ContactForm() {
     e.preventDefault();
     if (validate()) {
       setIsSending(true);
+      console.log("Sending message...", formData, turnstileToken);
       emailjs
         .send(
           import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
-          { ...formData, turnstileToken },
+          { ...formData, recipient: formData.email, turnstileToken },
           import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
         )
         .then(
@@ -100,6 +104,8 @@ export default function ContactForm() {
               title: "Message Sent",
               description: "Your message has been sent successfully!",
               duration: 5000,
+              action: <ToastAction altText="Try again">Try again</ToastAction>,
+              className: " top-0 right-0 flex before:absolute z-10 before:inset-0 bg-[rgba(0,21,48,0.51)] backdrop-blur-[3.5px] border-none outline outline-1 outline-tertiary/80 "
             });
             setFormData({
               fullName: "",
@@ -149,7 +155,7 @@ export default function ContactForm() {
             placeholder="Full Name"
           />
           {errors.fullName && (
-            <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>
+            <p className="text-tertiary text-xs mt-1">{errors.fullName}</p>
           )}
         </div>
         <div>
@@ -162,7 +168,7 @@ export default function ContactForm() {
             placeholder="Email"
           />
           {errors.email && (
-            <p className="text-red-400 text-xs mt-1">{errors.email}</p>
+            <p className="text-tertiary text-xs mt-1">{errors.email}</p>
           )}
         </div>
       </div>
@@ -177,7 +183,7 @@ export default function ContactForm() {
             placeholder="Organisation"
           />
           {errors.organisation && (
-            <p className="text-red-400 text-xs mt-1">{errors.organisation}</p>
+            <p className="text-tertiary text-xs mt-1">{errors.organisation}</p>
           )}
         </div>
         <div>
@@ -190,7 +196,7 @@ export default function ContactForm() {
             placeholder="Phone No."
           />
           {errors.phone && (
-            <p className="text-red-400 text-xs mt-1">{errors.phone}</p>
+            <p className="text-tertiary text-xs mt-1">{errors.phone}</p>
           )}
         </div>
       </div>
@@ -211,7 +217,7 @@ export default function ContactForm() {
           ))}
         </select>
         {errors.industry && (
-          <p className="text-red-400 text-xs mt-1">{errors.industry}</p>
+          <p className="text-tertiary text-xs mt-1">{errors.industry}</p>
         )}
       </div>
       <div>
@@ -224,20 +230,20 @@ export default function ContactForm() {
           rows="4"
         />
         {errors.message && (
-          <p className="text-red-400 text-xs mt-1">{errors.message}</p>
+          <p className="text-tertiary text-xs mt-1">{errors.message}</p>
         )}
       </div>
       <TurnstileWidget onVerify={handleTurnstileVerify} disabled={isSending} />
       {errors.turnstile && (
-        <p className="text-red-400 text-xs mt-1">{errors.turnstile}</p>
+        <p className="text-tertiary text-xs mt-1">{errors.turnstile}</p>
       )}
-      <button
+      <motion.button
         type="submit"
-        className="w-full py-3 px-4 bg-gradient-to-r from-color-3 to-color-4 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-color-4 focus:ring-opacity-50"
+        className="w-full py-3 px-4 bg-gradient-to-r from-color-3 to-color-4 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:outline hover:outline-1 hover:outline-tertiary/40 focus:outline-none focus:ring-1 focus:ring-tertiary/40 focus:ring-opacity-50"
         disabled={isSending}
       >
         {isSending ? "Sending..." : "Send"}
-      </button>
+      </motion.button>
     </form>
   );
 }

@@ -25,7 +25,7 @@ export default function TurnstileWidget({ onVerify: propOnVerify, disabled = fal
   };
   
   if (!siteKey) {
-    return <p className="text-red-500">Turnstile configuration error: Missing site key.</p>;
+    return <p className="text-tertiary">Turnstile configuration error: Missing site key.</p>;
   }
 
   // console.log(siteKey);
@@ -40,7 +40,7 @@ export default function TurnstileWidget({ onVerify: propOnVerify, disabled = fal
         disabled={disabled}
       />
       {!verified && (
-        <p className="text-orange-600 text-xs mt-1">Please complete the verification</p>
+        <p className="text-tertiary text-xs mt-1">Please complete the verification</p>
       )}
     </div>
   );
