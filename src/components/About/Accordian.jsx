@@ -54,7 +54,7 @@ const Accordion = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div id='about' className="py-4" variants={itemVariants}>
+      <motion.div id='about' className=" md:py-4" variants={itemVariants}>
         <h2 className="flex justify-between items-center w-full text-left text-sm font-medium text-tertiary">
           &ndash;WHY NMCYBER
         </h2>

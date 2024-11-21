@@ -55,7 +55,7 @@ const Counter = () => {
   };
 
   return (
-    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hidden ">
+    <section className="relative md:w-full flex flex-col items-center md:flex-row px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hidden ">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -66,7 +66,7 @@ const Counter = () => {
       {/* award winning */}
         <motion.div
           variants={itemVariants}
-          className=" relative min-w-1/2 bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300"
+          className=" relative md:min-w-1/2 bg-[rgba(0,21,48,0.51)] rounded-lg p-5 flex flex-col sm:flex-row justify-center items-center gap-4 hover:bg-[rgba(0,21,48,0.6)] transition-colors duration-300 outline-2 outline-orange-600 "
         >
           <motion.img
             src={belmontAward}
@@ -75,7 +75,7 @@ const Counter = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           />
-          <Badge className=" absolute inset-0- text-sm ssm:text-3xl font-normal text-white text-center sm:text-left"
+          <Badge className=" absolute -top-4 -left-2 bg-tertiary/40  text-sm  font-normal text-white text-center sm:text-left"
             variants={itemVariants} >
           Award Winning
           </Badge>

@@ -24,7 +24,7 @@ export const FeatureCard = ({ item, index }) => {
     return (
       <motion.div
         ref={cardRef}
-        className="relative overflow-hidden bg-white/5 backdrop-blur-lg rounded-lg p-6 text-center hover:bgg-white/10 transition-colors duration-300 group"
+        className="relative overflow-hidden bg-white/5 backdrop-blur-lg rounded-lg p-6 text-center hover:bgg-white/10 transition-colors duration-300 outline outline-lime-600 group"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -41,7 +41,7 @@ export const FeatureCard = ({ item, index }) => {
             whileHover={{ rotate: 5 }}
           />
           <h3 className="text-xl font-semibold mb-4 text-white">{item.service}</h3>
-          <GradientButton children={"see more"} className="relative font-semibold px-6 py-2 ~text-sm/lg rounded-full overflow-hiddenn " />
+          <GradientButton children={"see more"} className="relative font-semibold px-6 py-2 ~text-sm/lg rounded-full overflow-hidden " />
         </div>
       </motion.div>
     );
