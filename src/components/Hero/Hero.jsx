@@ -1,9 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { poster, circuit, largeEllipse, smallEllipse, binariesImage, worldGlobe, cyberWaves, inverseCyberWaves } from "@/assets";
+import { circuit, largeEllipse, smallEllipse, binariesImage, inverseCyberWaves } from "@/assets";
 import SectionWrapper from '../shared/SectionWrapper';
 import { LeftColumn, RightColumn } from './HeroColumns';
-import TrustedPartners, { Logos3 } from './TrustedPartners';
+import TrustedPartners from './TrustedPartners';
 
 const Hero = () => {
   return (

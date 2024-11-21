@@ -55,7 +55,7 @@ const Counter = () => {
   };
 
   return (
-    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hiddenn ">
+    <section className="relative w-full px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hidden ">
       <motion.div
         ref={ref}
         initial="hidden"
