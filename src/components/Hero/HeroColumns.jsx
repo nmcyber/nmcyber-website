@@ -81,7 +81,7 @@ export const LeftColumn = () => {
       animate="visible"
     >
       <motion.h1 
-        className="font-jarkata text-gradient-clip text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-snug 2xl:leading-[6rem] font-medium pb-3"
+        className="font-jarkata hero-text-gradient-clip text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-snug 2xl:leading-[6rem] font-semibold pb-3"
         variants={itemVariants}
       >
         Empowering You To Thrive In And With Cybersecurity

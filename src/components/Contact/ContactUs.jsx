@@ -1,82 +1,8 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
 import SectionWrapper from "../shared/SectionWrapper";
 import { circuit, largeEllipse, smallEllipse, shield } from "@/assets";
-import TurnstileWidget from "./CloudflareTurnstileWidget";
 import ContactForm from "./ContactForm";
 
 export default function ContactUs() {
-  // const [formData, setFormData] = useState({
-  //   fullName: "",
-  //   email: "",
-  //   organisation: "",
-  //   phone: "",
-  //   industry: "",
-  //   message: "",
-  // });
-
-  // const [errors, setErrors] = useState({});
-  // const [isSending, setIsSending] = useState(false);
-
-  // const validate = () => {
-  //   const newErrors = {};
-  //   if (!formData.fullName) newErrors.fullName = "Full name is required.";
-  //   if (!formData.email) {
-  //     newErrors.email = "Email is required.";
-  //   } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-  //     newErrors.email = "Email is invalid.";
-  //   }
-  //   if (!formData.organisation) newErrors.organisation = "Organisation name is required.";
-  //   if (!formData.phone) {
-  //     newErrors.phone = "Phone number is required.";
-  //   } else if (!/^\d{10}$/.test(formData.phone)) {
-  //     newErrors.phone = "Phone number must be 10 digits.";
-  //   }
-  //   if (!formData.industry) newErrors.industry = "Please select an industry.";
-  //   if (!formData.message) newErrors.message = "Message is required.";
-
-  //   setErrors(newErrors);
-  //   return Object.keys(newErrors).length === 0;
-  // };
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validate()) {
-  //     setIsSending(true);
-  //     emailjs
-  //       .send(
-  //         "SERVICE_ID",
-  //         "TEMPLATE_ID",
-  //         formData,
-  //         "USER_ID"
-  //       )
-  //       .then(
-  //         () => {
-  //           alert("Message sent successfully!");
-  //           setFormData({
-  //             fullName: "",
-  //             email: "",
-  //             organisation: "",
-  //             phone: "",
-  //             industry: "",
-  //             message: "",
-  //           });
-  //         },
-  //         (error) => {
-  //           console.error("Failed to send message:", error);
-  //           alert("Failed to send message. Please try again later.");
-  //         }
-  //       )
-  //       .finally(() => {
-  //         setIsSending(false);
-  //       });
-  //   }
-  // };
 
   return (
     <SectionWrapper

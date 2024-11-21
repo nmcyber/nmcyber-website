@@ -46,6 +46,12 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .hero-text-gradient-clip {
+    background: linear-gradient(121deg, #FFF 31.34%, #64cdf60e 90.04%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .overlayBg {
     /* background: rgba(0, 0, 0, 0.658); */
     backdrop-filter: blur(100px);

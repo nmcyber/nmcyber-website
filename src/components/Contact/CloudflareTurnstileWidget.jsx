@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Turnstile from "react-turnstile";
 
-export default function TurnstileWidget({ onVerify, disabled = false }) {
+export default function TurnstileWidget({ onVerify: propOnVerify, disabled = false }) {
   const [verified, setVerified] = useState(false);
   const [siteKey, setSiteKey] = useState('');
 
@@ -19,14 +19,16 @@ export default function TurnstileWidget({ onVerify, disabled = false }) {
 
   const handleVerify = (token) => {
     setVerified(true);
-    onVerify(token);
+    if (typeof propOnVerify === 'function') {
+      propOnVerify(token);
+    }
   };
   
   if (!siteKey) {
     return <p className="text-red-500">Turnstile configuration error: Missing site key.</p>;
   }
 
-  console.log(siteKey);
+  // console.log(siteKey);
 
   return (
     <div className="my-4">

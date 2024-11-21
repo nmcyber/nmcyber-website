@@ -25,7 +25,7 @@ function App() {
         <Route path='#solutions' element={<Solutions />} />
         <Route path='#contact' element={<ContactUs />} />
         <Route path="/404" element={<NotFound />} />
-        {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
+        <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path='/sitemap' element={<Sitemap />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
