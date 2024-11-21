@@ -15,6 +15,8 @@ html {
 
 @media screen and (prefers-reduced-motion: reduce) {
   html {
+    /* position: relative; */
+    /* overflow: hidden; */
     scroll-behavior: auto;
   }
 }
@@ -37,8 +39,15 @@ html {
   .text-balance {
     text-wrap: balance;
   }
+  /* [#64cdf6] */
   .text-gradient-clip {
-    background: linear-gradient(121deg, #FFF 31.34%, rgba(255, 255, 255, 0.00) 99.04%);
+    background: linear-gradient(121deg, #64cdf6cc 31.34%, rgba(255, 255, 255, 0.00) 99.04%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-text-gradient-clip {
+    background: linear-gradient(121deg, #FFF 31.34%, #64cdf60e 90.04%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -48,9 +57,9 @@ html {
     backdrop-filter: blur(100px);
     /* opacity: 50%; */
   }
-  /* .overlayBg::before {
-    background-color: rgba(0,21,48,0.51);
-  } */
+  .overlayBg::before {
+    background-color: #64cdf61f
+  }
   /* .overlayBg::after {
     backdrop-filter: blur(10px);
   } */
@@ -104,5 +113,6 @@ html {
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }

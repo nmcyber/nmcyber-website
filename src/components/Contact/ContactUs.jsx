@@ -1,85 +1,12 @@
-import React, { useState } from "react";
-import emailjs from "emailjs-com";
 import SectionWrapper from "../shared/SectionWrapper";
 import { circuit, largeEllipse, smallEllipse, shield } from "@/assets";
-import TurnstileWidget from "./CloudflareTurnstileWidget";
 import ContactForm from "./ContactForm";
 
 export default function ContactUs() {
-  // const [formData, setFormData] = useState({
-  //   fullName: "",
-  //   email: "",
-  //   organisation: "",
-  //   phone: "",
-  //   industry: "",
-  //   message: "",
-  // });
-
-  // const [errors, setErrors] = useState({});
-  // const [isSending, setIsSending] = useState(false);
-
-  // const validate = () => {
-  //   const newErrors = {};
-  //   if (!formData.fullName) newErrors.fullName = "Full name is required.";
-  //   if (!formData.email) {
-  //     newErrors.email = "Email is required.";
-  //   } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-  //     newErrors.email = "Email is invalid.";
-  //   }
-  //   if (!formData.organisation) newErrors.organisation = "Organisation name is required.";
-  //   if (!formData.phone) {
-  //     newErrors.phone = "Phone number is required.";
-  //   } else if (!/^\d{10}$/.test(formData.phone)) {
-  //     newErrors.phone = "Phone number must be 10 digits.";
-  //   }
-  //   if (!formData.industry) newErrors.industry = "Please select an industry.";
-  //   if (!formData.message) newErrors.message = "Message is required.";
-
-  //   setErrors(newErrors);
-  //   return Object.keys(newErrors).length === 0;
-  // };
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (validate()) {
-  //     setIsSending(true);
-  //     emailjs
-  //       .send(
-  //         "SERVICE_ID",
-  //         "TEMPLATE_ID",
-  //         formData,
-  //         "USER_ID"
-  //       )
-  //       .then(
-  //         () => {
-  //           alert("Message sent successfully!");
-  //           setFormData({
-  //             fullName: "",
-  //             email: "",
-  //             organisation: "",
-  //             phone: "",
-  //             industry: "",
-  //             message: "",
-  //           });
-  //         },
-  //         (error) => {
-  //           console.error("Failed to send message:", error);
-  //           alert("Failed to send message. Please try again later.");
-  //         }
-  //       )
-  //       .finally(() => {
-  //         setIsSending(false);
-  //       });
-  //   }
-  // };
 
   return (
     <SectionWrapper
+    className='overflow-hidden'
       images={[
         {
           src: circuit,
@@ -101,12 +28,12 @@ export default function ContactUs() {
     >
       <div className="relative z-30 flex flex-wrap-reverse w-full px-8 lg:px-16 xl:px-24 font-jakarta h-max py-16 md:py-24">
         <div className="relative w-full md:w-1/2 mx-auto flex justify-end">
-          <img src={shield} alt="Shield" className="absolute z-40 top-[-5%] aspect-auto hidden md:flex left-0 h-[25%] md:w-auto md:left-[10%] md:h-[25%]" />
-          <div className="w-full md:w-5/6 p-8 m-2 rounded-3xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 shadow-xl">
+          <img src={shield} alt="Shield" className="absolute z-40 top-[-5%] aspect-auto hidden md:flex -left-[0%] h-[25%] md:w-auto md:left-[10%] md:h-[25%]" />
+          <div className="w-full md:w-5/6 p-8 m-2 rounded-3xl bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg outline outline-1 outline-tertiary/30 border-opacity-20 shadow-xl">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 text-center">
               Contact Us
             </h2>
-            <div className="w-20 h-1 bg-color-4 mx-auto mb-8"></div>
+            {/* <div className="w-20 h-1 bg-color-4 mx-auto mb-8"></div> */}
 
           <ContactForm />            
 

@@ -5,11 +5,12 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Solutions from "./components/Solutions/Solutions";
 import Footer from "./components/Footer/Footer";
-import ContactUs from "./components/Contact/ContactUs";
-import "./index.css";
-import NotFound from "./pages/NotFound";
+import { logPageView } from './analytics';
 import Sitemap from "./pages/Sitemap";
+import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ContactUs from "./components/Contact/ContactUs";
+
 // import SmoothScrolling from "./utils/smoothscrolling";
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <Route path='#solutions' element={<Solutions />} />
         <Route path='#contact' element={<ContactUs />} />
         <Route path="/404" element={<NotFound />} />
-        {/* <Route path="*" element={<Navigate to="/404" replace />} /> */}
+        <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path='/sitemap' element={<Sitemap />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>

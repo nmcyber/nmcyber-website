@@ -81,7 +81,7 @@ export const LeftColumn = () => {
       animate="visible"
     >
       <motion.h1 
-        className="font-jarkata text-gradient-clip text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-snug 2xl:leading-[6rem] font-medium pb-3"
+        className="font-jarkata hero-text-gradient-clip text-white text-4xl md:text-5xl lg:text-7xl xl:text-6xl 2xl:text-7xl lg:leading-tight xl:leading-snug 2xl:leading-[6rem] font-semibold pb-3"
         variants={itemVariants}
       >
         Empowering You To Thrive In And With Cybersecurity
@@ -98,7 +98,7 @@ export const LeftColumn = () => {
         className="flex justify-center md:justify-start gap-10 items-center mt-4"
         variants={itemVariants}
       >
-        <GradientButton className='relative font-semibold px-6 py-2 sm:px-7 sm:py-3 md:px-8 md:py-4 text-base sm:text-lg rounded-3xl overflow-hidden group'>
+        <GradientButton className='relative font-semibold px-6 py-2 sm:px-7 sm:py-3 md:px-8 md:py-4 text-base sm:text-lg rounded-3xl shadow-2xl  overflow-hiddenn group'>
           Secure Your Business
         </GradientButton>
       </motion.div>

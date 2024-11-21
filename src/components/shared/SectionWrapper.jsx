@@ -1,6 +1,6 @@
 const SectionWrapper = ({ children, className = "", images = [] }) => {
   return (
-    <section className={`relative z-0 overflow-hidden ${className}`}>
+    <section className={`relative z-0 overflow-hiddenn ${className}`}>
       {children}
       {images.map((image, index) => (
         <div
