@@ -50,9 +50,9 @@ html {
     backdrop-filter: blur(100px);
     /* opacity: 50%; */
   }
-  /* .overlayBg::before {
-    background-color: rgba(0,21,48,0.51);
-  } */
+  .overlayBg::before {
+    background-color: #64cdf61f
+  }
   /* .overlayBg::after {
     backdrop-filter: blur(10px);
   } */

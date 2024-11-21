@@ -2,6 +2,11 @@ import { binaries, cyberlogo, largeEllipse, smallEllipse } from "@/assets";
 import SectionWrapper from "../shared/SectionWrapper";
 import Counter from "./Counter";
 import AccordionSection from "./Accordian";
+import ThreeAnimation from "./ThreeAnimation";
+import WordsAnimation from "./WordsAnimation";
+import BinaryRain from "./CyberRain";
+import CSSBinaryRain from "./CSSBinaryRain"
+import './CSSBinaryRain.css'
 
 const About = () => {
   return (
@@ -31,16 +36,19 @@ const About = () => {
       ]}
     >
     
-      <div className='flex flex-col min-h-auto relative z-30 gap-x-6 w-full ~py-12/16 md:~pb-2/4 px-8 lg:px-16 xl:px-24 border-0 border-orange-500 '>
-        {/* <div>
-          <Counter />
-        </div> */}
-        <div className=' flex'>
-          <>
+    <div className='flex flex-col min-h-auto relative gap-x-6 w-full py-12/16 md:py-4/24 px-8 lg:px-16 xl:px-24 border-0 border-orange-500'>
+        <div className='flex relative flex-col md:flex-row gap-x-8'>
+          <div className='w-full z-30  md:w-1/2 mb-8 md:mb-0'>
             <AccordionSection />
-          </>
-          <div className='flex justify-center items-center w-3/5 max-md:hidden'>
-            <img src={cyberlogo} alt='cyberlogo' width={350} />
+          </div>
+          <div className='flex flex-col z-20 justify-center text-[#64cdf6]/20 items-center w-full md:w-1/2 h-[500px] md:h-auto'>
+            <BinaryRain />
+            {/* <CSSBinaryRain /> */}
+            {/* <div className='w-full h-3/4 mb-4'>
+            </div> */}
+            {/* <div className='w-full h-1/4'>
+              <WordsAnimation />
+            </div> */}
           </div>
         </div>
       </div>
