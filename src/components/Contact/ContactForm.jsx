@@ -98,13 +98,13 @@ export default function ContactForm() {
         )
         .then(
           (response) => {
-            console.log("SUCCESS!", response.status, response.text);
+            // console.log("SUCCESS!", response.status, response.text);
             // alert("Message sent successfully!");
             toast({
               title: "Message Sent",
-              description: "Your message has been sent successfully!",
+              description: "Success! Check your mail box.",
               duration: 5000,
-              action: <ToastAction altText="Try again">Try again</ToastAction>,
+              // action: <ToastAction altText="Thank you!">Close</ToastAction>,
               className: " top-0 right-0 flex before:absolute z-10 before:inset-0 bg-[rgba(0,21,48,0.51)] backdrop-blur-[3.5px] border-none outline outline-1 outline-tertiary/80 "
             });
             setFormData({
@@ -127,10 +127,11 @@ export default function ContactForm() {
             setTurnstileToken(null);
           },
           (error) => {
-            console.error("FAILED...", error);
+            // console.error("FAILED...", error);
             toast({
               title: "Error",
-              description: "Failed to send message. Please try again later.",
+              description: "Failed to send message. Please try again.",
+              action: <ToastAction altText="Try again">Try again</ToastAction>,
               variant: "destructive",
               duration: 5000,
             });
