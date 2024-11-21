@@ -57,7 +57,7 @@ const Solutions = () => {
           hidden: { opacity: 0, y: 50 }
         }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative flex flex-col items-center z-40 md:w-full ~md:~px-12/24 font-jakarta ~py-12/24 mb-8 md:mb-0 ~md:~pb-8/36 border-2 border-orange-500"
+        className="relative flex flex-col items-center z-40 md:w-full ~md:~px-12/24 font-jakarta ~py-12/24 mb-8 md:mb-0 ~md:~pb-8/36 border-0 border-orange-500"
         // md:~py-4/24
         // px-4 sm:px-8 lg:px-16 xl:px-24
       >

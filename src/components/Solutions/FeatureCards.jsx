@@ -24,7 +24,7 @@ export const FeatureCard = ({ item, index }) => {
     return (
       <motion.div
         ref={cardRef}
-        className="relative overflow-hidden bg-white/5 backdrop-blur-lg rounded-lg p-6 text-center hover:bgg-white/10 transition-colors duration-300 outline outline-lime-600 group"
+        className="relative overflow-hidden bg-white/5 backdrop-blur-lg rounded-lg p-6 text-center hover:bgg-white/10 transition-colors duration-300 outline-0 outline-lime-600 group"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
