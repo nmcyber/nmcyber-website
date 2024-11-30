@@ -55,13 +55,13 @@ const Counter = () => {
   };
 
   return (
-    <section className="relative md:w-full flex flex-col items-center md:flex-row px-4 sm:px-8 lg:px-16 xl:px-24 py-16 border-none outline-none overflow-hidden ">
+    <section className="relative md:w-full flex flex-col justify-center items-center md:flex-1 md:flex-row px-4 sm:px-8 lg:px-16 xl:px-24 ~py-12/16 border-none outline-none overflow-hidden ">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="flex flex-col sm:flex-row flex-wrap gap-8 bg-transparent relative z-40"
+        className="flex flex-col sm:flex-row md:w-[70vw] md:justify-between flex-wrap gap-8 pt-12 md:pt-0 bg-transparent border-0 border-lime-500 relative z-40"
       >
       {/* award winning */}
         <motion.div
@@ -89,7 +89,7 @@ const Counter = () => {
       {/* COUNTER  */}
         <motion.div
           variants={itemVariants}
-          className="flex-1 min-w-[300px]"
+          className="flex-1 min-w-[300px] md:max-w-fit"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {countUp.map((item, i) => (

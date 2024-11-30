@@ -37,7 +37,7 @@ const About = () => {
       ]}
     >
     
-    <div className='flex flex-col min-h-auto relative gap-x-6 w-full py-8/16 ~md:~py-16/24 px-8 lg:px-16 xl:px-24 border-0 border-orange-500'>
+    <div className='flex flex-col min-h-auto relative gap-x-6 w-full py-4/16 ~md:~py-16/24 px-8 lg:px-16 xl:px-24 border-0 border-orange-500'>
         <div className='flex relative flex-col md:flex-row gap-x-8'>
           <div className='w-full z-30 md:w-1/2 mb-8 md:mb-0'>
             <AccordionSection />
