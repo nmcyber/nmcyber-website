@@ -5,8 +5,6 @@ import AccordionSection from "./Accordian";
 import ThreeAnimation from "./ThreeAnimation";
 import WordsAnimation from "./WordsAnimation";
 import BinaryRain from "./CyberRain";
-import CSSBinaryRain from "./CSSBinaryRain"
-import './CSSBinaryRain.css'
 
 const About = () => {
   return (
