@@ -25,7 +25,6 @@ export const SnowFall = () => {
       setInit(true);
     });
   }, []);
-
   const particlesLoaded = (container) => {
     console.log(container);
   };
@@ -62,13 +61,22 @@ export const SnowFall = () => {
         },
         "detectRetina": true,
         "duration": 0,
-        "fpsLimit": 120,
+        "fpsLimit": 60,
         "interactivity": {
-          "detectsOn": "window",
+          "detectsOn": "canvas",
           "events": {
             "onClick": {
               "enable": true,
-              "mode": {}
+              "mode": {
+                "attract": {
+                    "distance": 200,
+                    "duration": 0.4,
+                    "easing": "ease-out-quad",
+                    "factor": 1,
+                    "maxSpeed": 50,
+                    "speed": 1
+                  },
+              }
             },
             "onDiv": {
               "selectors": {},
@@ -219,7 +227,8 @@ export const SnowFall = () => {
             }
           },
           "color": {
-            "value": "#fff",
+            "value": "#f6fbfd95",
+            // #64cdf6
             "animation": {
               "h": {
                 "count": 0,
