@@ -25,12 +25,9 @@ module.exports = {
  			center: 'true',
  			padding: '2rem',
 			 screens: {
-				sm: '640px',
-				md: '768px',
-				xl: '1280px',
-				'2xl': '1400px',
-				'3xl': '1600px'
-			  }
+  			'2xl': '1400px',
+  			'3xl': '1920px'
+  		},
  		},
  		fontFamily: {
  			jarkata: ["var(--font-jakarta)"],

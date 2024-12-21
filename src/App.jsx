@@ -10,6 +10,8 @@ import Sitemap from "./pages/Sitemap";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./components/Contact/ContactUs";
+import { SnowFall } from "./components/Xmas/Snow";
+import Snowstorm from "./components/Xmas/Snowstorm";
 
 // import SmoothScrolling from "./utils/smoothscrolling";
 
@@ -31,6 +33,8 @@ function App() {
       </Routes>
       <Footer />
       {/* </SmoothScrolling> */}
+      {/* <SnowFall /> */}
+      <Snowstorm />
     </Router>
   );
 }

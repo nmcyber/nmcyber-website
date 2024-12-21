@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { largeEllipse, loops, smallEllipse, spiralLoop } from "@/assets";
-import { services } from "../../Constants";
+import { services, serviceContent } from "../../Constants";
 import SectionWrapper from "../shared/SectionWrapper";
-import { GradientButton } from "../shared/GradientButton";
 import { FeatureCard } from "./FeatureCards";
 
 const Solutions = () => {
@@ -58,8 +57,6 @@ const Solutions = () => {
         }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative flex flex-col items-center z-40 md:w-full ~md:~px-12/24 font-jakarta ~py-12/24 mb-8 md:mb-0 ~md:~pb-8/36 border-0 border-orange-500"
-        // md:~py-4/24
-        // px-4 sm:px-8 lg:px-16 xl:px-24
       >
         <motion.div className="text-center mb-12">
           <motion.h3 
@@ -80,9 +77,9 @@ const Solutions = () => {
           </motion.h1>
         </motion.div>
 
-        <div className=" grid ~w-sm/screen grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline-o outline-lime-600">
+        <div className="grid ~w-sm/screen grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 outline-0 outline-lime-600">
           {services.map((item, index) => (
-            <FeatureCard key={index} item={item} index={index} />
+            <FeatureCard key={index} item={item} index={index} content={serviceContent[item.service]} />
           ))}
         </div>
       </motion.div>
@@ -91,3 +88,4 @@ const Solutions = () => {
 };
 
 export default Solutions;
+

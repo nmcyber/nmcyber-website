@@ -197,3 +197,49 @@ export const subMenuItemsTwo = [
   }
 ];
 
+export const serviceContent = {
+  "Cybersecurity Readiness": {
+    title: "Cybersecurity Readiness",
+    description: "Our Cybersecurity Readiness service ensures your organization is prepared to face and mitigate cyber threats effectively.",
+    features: [
+      "Comprehensive risk assessment",
+      "Incident response planning",
+      "Regular security audits",
+      "Employee training programs",
+      "Continuous monitoring and threat intelligence"
+    ]
+  },
+  "Cybersecurity Assessment": {
+    title: "Cybersecurity Assessment",
+    description: "Our expert team conducts thorough assessments to identify vulnerabilities and strengthen your cybersecurity posture.",
+    features: [
+      "Vulnerability scanning and penetration testing",
+      "Security policy review",
+      "Compliance gap analysis",
+      "Third-party risk assessment",
+      "Customized security recommendations"
+    ]
+  },
+  "Screening Candidate for Hiring": {
+    title: "Cybersecurity Talent Screening",
+    description: "We help you identify and hire top cybersecurity talent to build a robust security team.",
+    features: [
+      "Technical skills assessment",
+      "Security certifications verification",
+      "Background checks",
+      "Soft skills evaluation",
+      "Cultural fit assessment"
+    ]
+  },
+  "Cybersecurity Awareness & Training": {
+    title: "Cybersecurity Awareness & Training",
+    description: "Empower your employees with the knowledge and skills to recognize and prevent cyber threats.",
+    features: [
+      "Interactive online training modules",
+      "Simulated phishing exercises",
+      "Role-specific security training",
+      "Regular security updates and newsletters",
+      "Cybersecurity awareness campaigns"
+    ]
+  }
+}
