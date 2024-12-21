@@ -5,6 +5,9 @@ import { Input } from "@/components/ui/input";
 import Logo from "../shared/Logo";
 
 const Footer = () => {
+  // Get the current year
+  const currentYear = new Date().getFullYear(); 
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,12 +58,12 @@ const Footer = () => {
     <footer className="relative flex justify-center items-center ~pt-8/24 ~pb-2/6 outline-0 outline-orange-600 overflow-hidden ">
     {/* ---- FOOTER OUTLINE WITH CUSTOM TAILWIND CONFIG RADIUS ---- */}
       <div className=" before:absolute before:container before:mx-auto before:h-full before:z-30 before:top-10 before:left-auto md:before:outline md:before:outline-1 md:before:outline-tertiary before:rounded-t-xl ">
-        <div className=" relative container z-30 mx-auto px-4 sm:px-6 lg:px-8  ">
+        <div className=" relative container w-full z-30 mx-auto px-4 sm:px-6 lg:px-8  ">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
           >
             <motion.div variants={itemVariants} className="col-span-1 lg:col-span-1">
               <Logo />
@@ -101,7 +104,7 @@ const Footer = () => {
             variants={itemVariants}
             className="mt-10 ~pt-2/4 border-t text-sm border-zinc-800 flex flex-col md:flex-row justify-between items-center text-zinc-400"
           >
-            <p>© 2024 NMCyber. All rights reserved.</p>
+            <p>© {currentYear} NMCYBER. All rights reserved.</p>
             <div className="mt-4 md:mt-0 space-x-4">
               <a href="/privacy-policy" className="hover:text-tertiary">Privacy Policy</a>
               <a href="#" className="hover:text-tertiary">Terms of Service</a>

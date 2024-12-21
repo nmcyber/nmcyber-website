@@ -9,7 +9,7 @@ export default function Logo() {
       alt="logo"
     />
     <p>
-    NM<span className="bg-clip-text text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
+    NM<span className="bg-clip-text uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
     </p>
     </a>
   )

@@ -68,6 +68,8 @@ export default function Snow() {
         speed={[1.0, 3.0]}
         changeFrequency={50}
         opacity={[0.6, 1]}
+        // Uncomment to make snowflakes appear on top of everything
+        style={{ zIndex: "100" }} 
       />
     </div>
   )
