@@ -229,6 +229,7 @@ export const SnowFall = () => {
           "color": {
             "value": "#f6fbfd95",
             // #64cdf6
+            // #b0e5fa95
             "animation": {
               "h": {
                 "count": 0,
